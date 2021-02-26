@@ -1,0 +1,2 @@
+# Pattern Fast,Slow Pointer
+
