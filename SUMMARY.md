@@ -7,7 +7,6 @@
   * [Trees](data-structure/trees.md)
   * [Map](data-structure/map.md)
   * [Tries](data-structure/tries.md)
-  * [Heaps](data-structure/heaps.md)
   * [Graphs](data-structure/graphs.md)
   * [Stacks and Queues](data-structure/stacks-and-queues.md)
   * [LinkedList](data-structure/linkedlist.md)
