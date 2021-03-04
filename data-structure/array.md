@@ -51,19 +51,23 @@ for(Integer cur: de_que){
 ## Populare idea:
 
 * Two pointers
-  * 88
   * 1
+  * 88
+  * 283
 * Sliding Windows
 * Prefix Sum
 
 ## Easy:
 
-* [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
 * [1. Two Sum](https://leetcode.com/problems/two-sum/)
+* [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
 * [387. First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)
+* [905. Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/)
+* [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
 
 ## Medium:
 
+* [189. Rotate Array](https://leetcode.com/problems/rotate-array/)
 * [704.Binary Search ](https://leetcode.com/problems/binary-search/)
 * [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
 * [702. Search in a Sorted Array of Unknown Size](https://leetcode.com/problems/search-in-a-sorted-array-of-unknown-size/)
@@ -72,7 +76,41 @@ for(Integer cur: de_que){
 * [153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 * [189. Rotate Array](https://leetcode.com/problems/rotate-array/)
 * [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
-* [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+* 
+  Rearrange an array in maximum minimum form
+
+  * Given an array, can you re-arrange the elements such that the first position will have the largest number, the second will have the smallest, the third will have the second-largest
+  * Input: arr = {1, 2, 3, 4, 5}  , output: arr = {5, 1, 4, 2, 3}
+  * Solution:
+    * Use another array to strore your result and then to copy the result back to original array
+    * Better solution:
+      * Here, arr\[maxId\] is stored as the multiplier. Whereas, arr\[i\] is stored as the remainder. For example in the array, \[1, 2, 3, 4, 5, 6, 7, 8, 9\], the maxElem which is any element greater than the maximum element in the array, in this case, is 10 and 91 is stored at index 0. With 91, we can get the original element, 1, using the expression 91%10 as well as the new element, 9, using the expression 91/10.
+
+```text
+  public static void maxMin(int[] arr) {
+    int maxIdx = arr.length - 1;
+    int minIdx = 0;
+    // store any element that is greater than the maximum element in the array 
+    int maxElem = arr[maxIdx] + 1; 
+    
+    for( int i = 0; i < arr.length; i++) {
+      // at even indices we will store maximum elements
+      if (i % 2 == 0){  
+        arr[i] += (arr[maxIdx] % maxElem ) * maxElem;
+        maxIdx -= 1;
+      }
+      else { // at odd indices we will store minimum elements
+        arr[i] += (arr[minIdx] % maxElem ) * maxElem;
+        minIdx += 1;
+      }
+    }
+    // dividing with maxElem to get original values.
+    for( int i = 0; i < arr.length; i++) {
+      arr[i] = arr[i] / maxElem;
+    }
+  }
+```
+
 * [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 * Best time to buy and sell stock
   * [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
@@ -87,6 +125,20 @@ for(Integer cur: de_que){
 
 ## Hard:
 
+* [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+  * dynamic programming
+
+## Useful Code snippet:
+
+* Put character existence into array 
+
+```text
+int freq [] = new int[256];
+for(int i = 0; i < s.length(); i ++)
+    freq [s.charAt(i) - 'a'] ++;
+```
+
+* 
 ## The question that I am having trouble:
 
 
