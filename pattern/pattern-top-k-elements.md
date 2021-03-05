@@ -1,2 +1,2 @@
-# Pattern Top K elements
+# Pattern Two Heaps
 
