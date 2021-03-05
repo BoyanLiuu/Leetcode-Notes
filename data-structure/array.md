@@ -19,16 +19,6 @@ int intArray[][] =  {{1,2,3}.{4,5}}
 int cloneArray [][] = intArray.clone();
 ```
 
-### Array Converting:
-
-* How to convert Other data structure to array
-
-```text
-// Convert heap to array
-maxHeap.toArray(new int[k][2]); 
-```
-
-* 
 ### ArrayDeque in Java
 
 * It apply resizable array, and implementation of the Deque interface
@@ -57,19 +47,6 @@ de_que.poll（） remove head
 for(Integer cur: de_que){
 }
 ```
-
-## Useful Code snippet:
-
-* Put character existence into array 
-
-```text
-int freq [] = new int[256];
-for(int i = 0; i < s.length(); i ++)
-    freq [s.charAt(i) - 'a'] ++;
-    
-```
-
-
 
 ## Populare idea:
 
@@ -151,7 +128,15 @@ for(int i = 0; i < s.length(); i ++)
 * [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
   * dynamic programming
 
-## 
+## Useful Code snippet:
+
+* Put character existence into array 
+
+```text
+int freq [] = new int[256];
+for(int i = 0; i < s.length(); i ++)
+    freq [s.charAt(i) - 'a'] ++;
+```
 
 * 
 ## The question that I am having trouble:
