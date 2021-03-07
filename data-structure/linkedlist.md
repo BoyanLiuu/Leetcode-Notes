@@ -7,6 +7,7 @@
 ## Medium:
 
 * [2. Add Two Numbers](https://leetcode.com/problems/lru-cache/)
+* [138. Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
 
 
 
