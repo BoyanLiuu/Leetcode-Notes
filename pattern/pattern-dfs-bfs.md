@@ -7,6 +7,8 @@
 * [994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
   * We use a delimiter \(i.e. \(row=-1, col=-1\)\) in the queue to separate cells on different levels.
 * 200. Number of Islands
+* [139. Word Break](https://leetcode.com/problems/word-break/)
+* [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
 
 ## Code snippets:
 
