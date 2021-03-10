@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Main Page](README.md)
+* [General Utils](general-utils.md)
 * [Data Structure](data-structure/README.md)
   * [Array](data-structure/array.md)
   * [Strings](data-structure/strings.md)
@@ -11,10 +12,9 @@
   * [Stacks and Queues](data-structure/stacks-and-queues.md)
   * [LinkedList](data-structure/linkedlist.md)
 * [Coding Patterns](pattern/README.md)
-  * [Pattern Sliding Window](pattern/pattern-sliding-window.md)
-  * [Pattern Recursion](pattern/pattern-recursion.md)
-  * [Pattern Two Pointer](pattern/pattern-two-pointer.md)
-  * [Pattern Fast,Slow Pointer](pattern/pattern-fast-slow-pointer.md)
+  * [1. Sliding Window](pattern/pattern-sliding-window.md)
+  * [2. Two Pointer](pattern/pattern-two-pointer.md)
+  * [Pattern Fast, Slow Pointer](pattern/pattern-fast-slow-pointer.md)
   * [Pattern Merge Intervals](pattern/pattern-merge-intervals.md)
   * [Pattern DFS/BFS](pattern/pattern-dfs-bfs.md)
   * [Pattern Top K elements](pattern/pattern-two-heaps.md)
@@ -30,6 +30,7 @@
     * [Topological Sort](pattern/pattern-sort/topological-sort.md)
     * [Cyclic Sort](pattern/pattern-sort/cyclic-sort.md)
   * [Pattern BackTrack](pattern/pattern-backtrack.md)
-  * [Pattern Greedy](pattern/pattern-greedy.md)
+  * [Pattern Greedy](pattern/pattern-greedy/README.md)
+    * [2. Recursion](pattern/pattern-greedy/pattern-recursion.md)
 * [Design](design.md)
 

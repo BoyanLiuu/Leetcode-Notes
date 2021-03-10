@@ -1,4 +1,4 @@
-# Pattern Two Pointer
+# 2. Two Pointer
 
 ## 
 

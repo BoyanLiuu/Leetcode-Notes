@@ -1,4 +1,4 @@
-# Pattern Sliding Window
+# 1. Sliding Window
 
 ## Introduction:
 
