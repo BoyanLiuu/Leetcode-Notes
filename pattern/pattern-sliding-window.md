@@ -1,13 +1,30 @@
 # 1. Sliding Window
 
-## Introduction:
+## Summary:
 
-* It is usually dealing with array or LinkedList. We are asked to find or calculate something among all the contiguous subarrays of a given size.
-* A problem can be solved by two pointers when two pointers come into place to help us reduce the total cases we need to consider, such that the corresponding time complexity will reduce too.
-* How to determine whether we can use sliding window: 
-  * If a wider scope of the sliding window is valid, the narrower scope of that wider scope is valid must hold
-  * If a narrower scope of the sliding window is invalid, the wider scope of that wider scope is invalid must hold
-* When we finding no repeating character, we record its last index, When we finding  K distinct character, We record its occurrence.
+* It is usually dealing with an **`array`** or a **`linked list`** with its **`subarray`**.
+* A problem can be solved by two pointers forming a range/window to help us **reduce the total cases we need to consider**, such that the corresponding **time complexity will reduce** too.
+* **Rules** that holds a sliding window: 
+  * TL;DR: every narrower area within the window is valid, the wider scope is invalid.
+    * If a wider scope of the window is valid, the narrower scope of the window must be valid
+    * If a narrower scope of the window is invalid, the wider scope of that window must be invalid
+* When we finding no repeating character, we record its last index, When we finding K distinct characters, We record its occurrence.
+
+
+
+* **Sliding window types:**
+  * Fixed Window Size \(easy\) :
+    * Iteration time through n sized data structure:
+      * **`(Length - K +1)`, K = window size**
+    * **Start & end move at the same rate**
+  * Varied Window Size \(complex\):
+    * Key Points:       **----------------------------------------------------**
+      * Determining the **requirement of window movement** 
+      * Determining **new starting/ending index**
+      *  **----------------------------------------------------------------**
+    * Behavior \(snail movement\)
+      * Increment starting index **when exceeding** the requirement \(**shrink**\)
+      * Increment ending index **when** the requirement is **not fulfilled \(expand\)**
 
 ## Easy:
 
@@ -16,9 +33,11 @@
 * 变种题目： 
   * Maximum Sum Subarray of Size K
   * [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)
-* The brutal force is to calculate the sum of every 5 element contiguous subarray of the given array and divide the sum by 5 to find the average.  O\(N\*K\)
-* The inefficiency is that for any two consecutive subarrays of size ‘5’, the overlapping part \(which will contain four elements\) will be evaluated twice ![](../.gitbook/assets/image%20%282%29.png) .There are four overlapping elements between the subarray.
+* The brutal force is to calculate the sum of every 5 elements contiguous subarray of the given array and divide the sum by 5 to find the average.  O\(N\*K\)
+* The inefficiency is that for any two consecutive subarrays of size ‘5’, the overlapping part \(which will contain four elements\) will be evaluated twice. There are four overlapping elements between the subarray.
 * The efficient way to solve this problem would be to visualize each contiguous subarray as a sliding window of ‘5’ elements. This means that we will slide the window by one element when we move on to the next subarray. To reuse the sum from the previous subarray, we will subtract the element going out of the window and add the element now being included in the sliding window. This will save us from going through the whole subarray to find the sum and, as a result, the algorithm complexity will reduce to **O\(N\)**
+
+![](../.gitbook/assets/image%20%282%29.png)
 
 ```text
     public double findMaxAverage(int[] nums, int k) {
@@ -82,11 +101,11 @@
 
 ### [340. Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)
 
-* Use hash map to track occurrence of each character
+* Use hashmap to track the occurrence of each character
 
 ### [904. Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
 
-* Same as finding longest substring with at most 2 distinct characters
+* Same as finding the longest substring with at most 2 distinct characters
 
 ## Medium:
 
@@ -164,16 +183,17 @@ class Solution {
 
 
 
-## 
+## Ivy's Marked Problems w/ Notes:
 
 
 
 
 
-## Problem I am struggle:
+## Boyan's Marked Problems:
 
-* 3
-* 424
-* 487
-* 1100
+* Trouble List:
+  * 3
+  * 424
+  * 487
+  * 1100
 
