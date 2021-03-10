@@ -7,6 +7,7 @@
 * How to determine whether we can use sliding window: 
   * If a wider scope of the sliding window is valid, the narrower scope of that wider scope is valid must hold
   * If a narrower scope of the sliding window is invalid, the wider scope of that wider scope is invalid must hold
+* When we finding no repeating character, we record its last index, When we finding  K distinct character, We record its occurrence.
 
 ## Easy:
 
@@ -81,8 +82,98 @@
 
 ### [340. Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)
 
+* Use hash map to track occurrence of each character
 
+### [904. Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
+
+* Same as finding longest substring with at most 2 distinct characters
 
 ## Medium:
 
-* 
+### [3.longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+
+* We can use a HashMap to remember the **last index of each character** we have processed. Whenever we get a repeating character, we will shrink our sliding window to ensure that we always have distinct characters in the sliding window
+
+### [424. Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
+
+* We’ll iterate through the string to add one letter at a time in the window.
+* We’ll also keep track of the count of the maximum repeating letter in any window \(let’s call it maxRepeatLetterCount\).
+* So, at any time, we know that we can have a window which has one letter repeating maxRepeatLetterCount times; this means we should try to replace the remaining letters.
+* If we have more than ‘k’ remaining letters, we should shrink the window as we are not allowed to replace more than ‘k’ letters.
+
+```text
+class Solution {
+    public int characterReplacement(String s, int k) {
+        int windowStart =0, maxLength  = 0, maxRepeatLetterCount = 0;
+        HashMap<Character,Integer> map =  new HashMap<>();
+        
+        for(int windowEnd = 0; windowEnd< s.length(); windowEnd++){
+            char rightChar = s.charAt(windowEnd);
+            map.put(rightChar,map.getOrDefault(rightChar,0)+1);
+            maxRepeatLetterCount =  Math.max(maxRepeatLetterCount, map.get(rightChar));
+            
+            // in the range,we have more than k element need to swap, then we shrink window
+            if(windowEnd - windowStart -maxRepeatLetterCount +1 > k){
+                char leftChar =  s.charAt(windowStart);
+                map.put(leftChar, map.get(leftChar) - 1);
+                windowStart ++;
+                
+            }
+            maxLength = Math.max(maxLength,windowEnd - windowStart +1 );
+            
+        }
+        return maxLength;
+    }
+}
+```
+
+### [487. Max Consecutive Ones II](https://leetcode.com/problems/max-consecutive-ones/)
+
+* 424 with k equal to 1
+
+
+
+### [1004. Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/)
+
+* exact same idea as 424
+
+### [1100. Find K-Length Substrings With No Repeated Characters](https://leetcode.com/problems/find-k-length-substrings-with-no-repeated-characters/)
+
+* We need to worry about repeated character and keep track of window range
+* Use hash map to record character last index 
+
+### [1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit ](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/)
+
+### [1151. Minimum Swaps to Group All 1's Together](https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together/)
+
+### [395. Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/)
+
+### [1423. Maximum Points You Can Obtain from Cards](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/)
+
+## Hard:
+
+### [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/)
+
+### [438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
+
+### [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+
+### [30. Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
+
+
+
+
+
+## 
+
+
+
+
+
+## Problem I am struggle:
+
+* 3
+* 424
+* 487
+* 1100
+
