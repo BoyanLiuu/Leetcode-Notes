@@ -1,4 +1,4 @@
-# Pattern
+# Coding Patterns
 
 Pa
 

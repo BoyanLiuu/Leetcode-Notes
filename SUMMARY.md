@@ -10,7 +10,7 @@
   * [Graphs](data-structure/graphs.md)
   * [Stacks and Queues](data-structure/stacks-and-queues.md)
   * [LinkedList](data-structure/linkedlist.md)
-* [Pattern](pattern/README.md)
+* [Coding Patterns](pattern/README.md)
   * [Pattern Sliding Window](pattern/pattern-sliding-window.md)
   * [Pattern Recursion](pattern/pattern-recursion.md)
   * [Pattern Two Pointer](pattern/pattern-two-pointer.md)
