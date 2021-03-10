@@ -117,8 +117,8 @@
 
 * We’ll iterate through the string to add one letter at a time in the window.
 * We’ll also keep track of the count of the maximum repeating letter in any window \(let’s call it maxRepeatLetterCount\).
-* So, at any time, we know that we can have a window which has one letter repeating maxRepeatLetterCount times; this means we should try to replace the remaining letters.
-* If we have more than ‘k’ remaining letters, we should shrink the window as we are not allowed to replace more than ‘k’ letters.
+* So, at any time, we know that we can have a window that has one letter repeating maxRepeatLetterCount times; this means we should try to replace the remaining letters.
+* If we have more than `k` remaining letters, we should shrink the window as we are not allowed to replace more than `k` letters.
 
 ```text
 class Solution {
@@ -185,7 +185,7 @@ class Solution {
 
 ## Ivy's Marked Problems w/ Notes:
 
-
+ 
 
 
 
