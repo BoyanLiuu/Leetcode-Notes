@@ -174,9 +174,56 @@ class Solution {
 
 ### [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/)
 
+* Create a HashMap to calculate the frequencies of all characters in the pattern.
+* Iterate through the string, adding one character at a time in the sliding window.
+* If the character being added matches a character in the HashMap, decrement its frequency in the map. If the character frequency becomes zero, we got a complete match.
+* If at any time, the number of characters matched is equal to the number of distinct characters in the pattern \(i.e., total characters in the HashMap\), we have gotten our required permutation.
+* If the window size is greater than the length of the pattern, shrink the window to make it equal to the pattern’s size. At the same time, if the character going out was part of the pattern, put it back in the frequency HashMap.
+
+```text
+class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+
+    int windowStart = 0, matched = 0;
+    Map<Character, Integer> charFrequencyMap = new HashMap<>();
+    for (char chr :  s1.toCharArray())
+      charFrequencyMap.put(chr, charFrequencyMap.getOrDefault(chr, 0) + 1);
+
+    // our goal is to match all the characters from the 'charFrequencyMap' with the current window
+    // try to extend the range [windowStart, windowEnd]
+    for (int windowEnd = 0; windowEnd <  s2.length(); windowEnd++) {
+      char rightChar =  s2.charAt(windowEnd);
+      if (charFrequencyMap.containsKey(rightChar)) {
+        // decrement the frequency of the matched character
+        charFrequencyMap.put(rightChar, charFrequencyMap.get(rightChar) - 1);
+        if (charFrequencyMap.get(rightChar) == 0) // character is completely matched
+          matched++;
+      }
+
+      if (matched == charFrequencyMap.size())
+        return true;
+      // shrink the window by one character ,If the window size is greater than the length of the pattern
+      if (windowEnd -windowStart +1 >=  s1.length()) { 
+        char leftChar =  s2.charAt(windowStart++);
+        if (charFrequencyMap.containsKey(leftChar)) {
+          if (charFrequencyMap.get(leftChar) == 0)
+            matched--; // before putting the character back, decrement the matched count
+          // put the character back for matching
+          charFrequencyMap.put(leftChar, charFrequencyMap.get(leftChar) + 1);
+        }
+      }
+  }
+        
+        return false;
+    }
+}
+```
+
 ### [438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
 
 ### [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+
+* Same idea as 567
 
 ### [30. Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
 
@@ -197,4 +244,5 @@ class Solution {
   * 424
   * 487
   * 1100
+  * 567
 
