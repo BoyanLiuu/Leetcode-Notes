@@ -12,19 +12,20 @@
 
 
 
-* **Sliding window types:**
-  * Fixed Window Size \(easy\) :
-    * Iteration time through n sized data structure:
-      * **`(Length - K +1)`, K = window size**
-    * **Start & end move at the same rate**
-  * Varied Window Size \(complex\):
-    * Key Points:       **----------------------------------------------------**
-      * Determining the **requirement of window movement** 
-      * Determining **new starting/ending index**
-      *  **----------------------------------------------------------------**
-    * Behavior \(snail movement\)
-      * Increment starting index **when exceeding** the requirement \(**shrink**\)
-      * Increment ending index **when** the requirement is **not fulfilled \(expand\)**
+## **Sliding window types:**
+
+* **`Fixed Window Size (easy)`** :
+  * Iteration time through n sized data structure:
+    * **`(Length - K +1)`, K = window size**
+  * **Start & end move at the same rate**
+* **`Varied Window Size (complex)`**:
+  * Key Points:       **----------------------------------------------------**
+    * Determining the **requirement of window movement** 
+    * Determining **new starting/ending index**
+    *  **----------------------------------------------------------------**
+  * Behavior \(snail movement\)
+    * Increment starting index **when exceeding** the requirement \(**shrink**\)
+    * Increment ending index **when** the requirement is **not fulfilled \(expand\)**
 
 ## Easy:
 
