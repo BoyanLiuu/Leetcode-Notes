@@ -19,7 +19,7 @@
     * **`(Length - K +1)`, K = window size**
   * **Start & end move at the same rate**
 * **`Varied Window Size (complex)`**:
-  * Key Points:       **----------------------------------------------------**
+  * 🗝 Key Points:       **----------------------------------------------------**
     * Determining the **requirement of window movement** 
     * Determining **new starting/ending index**
     *  **----------------------------------------------------------------**
