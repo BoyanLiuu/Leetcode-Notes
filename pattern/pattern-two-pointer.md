@@ -5,7 +5,7 @@
 * A great pattern to **`find a set of elements` that fulfill certain constraints in `sorted arrays`/`Linked Lists`** 
   * Types:  **`balancing values`**,  **`in-place switching`**,
     *  but **don't feel like it's limited to these functionalities**, be creative!
-* **Key Points:** ------------------------------------------------------------------
+* \*\*\*\*🗝 **Key Points:** ------------------------------------------------------------------
   * Where to place the pointers initially\(or to not place them\)?
   * Under what case should we move the pointers?
   * When and where to update the pointers?
