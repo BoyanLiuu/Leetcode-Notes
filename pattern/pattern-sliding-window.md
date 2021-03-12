@@ -166,12 +166,9 @@ class Solution {
 
 ### [1151. Minimum Swaps to Group All 1's Together](https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together/)
 
-* The problem is to figure out what represent window range 
-* In each of subarray, number of swap is represent by number of zero .
+### [395. Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/)
 
 ### [1423. Maximum Points You Can Obtain from Cards](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/)
-
-* Find the smallest subarray sum of length \(length - k\)
 
 ## Hard:
 
@@ -294,6 +291,4 @@ class Solution {
   * 1100
   * 567
   * 30
-  * 1438
-  * 1423
 
