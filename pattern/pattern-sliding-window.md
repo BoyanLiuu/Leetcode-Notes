@@ -200,7 +200,7 @@ class Solution {
           matched++;
       }
 
-      if (matched == charFrequencyMap.size())
+      if (matched == charFrequencyMap.size()) // have to use map.size() for duplicated field
         return true;
       // shrink the window by one character ,If the window size is greater than the length of the pattern
       if (windowEnd -windowStart +1 >=  s1.length()) { 
@@ -221,11 +221,56 @@ class Solution {
 
 ### [438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
 
+* Same idea as 567
+
 ### [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 
 * Same idea as 567
 
 ### [30. Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
+
+* Keep the frequency of every word in a HashMap.
+* Starting from every index in the string, try to match all the words.
+* In each iteration, keep track of all the words that we have already seen in another HashMap.
+* If a word is not found or has a higher frequency than required, we can move on to the next character in the string.
+* Store the index if we have found all the words.
+
+```text
+class Solution {
+    public List<Integer> findSubstring(String s, String[] words) {
+        Map<String, Integer> wordFrequencyMap = new HashMap<>();
+        //Keep the frequency of every word in a HashMap.
+        for (String word : words)
+          wordFrequencyMap.put(word, wordFrequencyMap.getOrDefault(word, 0) + 1);
+
+        List<Integer> resultIndices = new ArrayList<Integer>();
+        int wordsCount = words.length, wordLength = words[0].length();
+
+        for (int i = 0; i <= s.length() - wordsCount * wordLength; i++) {
+                //In each iteration, keep track of all the words that we have already seen in another HashMap.
+              Map<String, Integer> wordsSeen = new HashMap<>();
+              for (int j = 0; j < wordsCount; j++) {
+                int nextWordIndex = i + j * wordLength;
+                // get the next word from the string
+                String word = s.substring(nextWordIndex, nextWordIndex + wordLength);
+                if (!wordFrequencyMap.containsKey(word)) // break if we don't need this word
+                  break;
+
+                wordsSeen.put(word, wordsSeen.getOrDefault(word, 0) + 1); // add the word to the 'wordsSeen' map
+
+                // no need to process further if the word has higher frequency than required 
+                if (wordsSeen.get(word) > wordFrequencyMap.getOrDefault(word, 0))
+                  break;
+
+                if (j + 1 == wordsCount) // store index if we have found all the words
+                  resultIndices.add(i);
+              }
+        }
+
+    return resultIndices;
+    }
+}
+```
 
 
 
@@ -245,4 +290,5 @@ class Solution {
   * 487
   * 1100
   * 567
+  * 30
 
