@@ -9,7 +9,7 @@
   * Where to place the pointers initially\(or to not place them\)?
   * Under what case should we move the pointers?
   * When and where to update the pointers?
-  * **-------------------------------------------------------------------------**
+  * **-------------------------------------------------------------------------------**
 
 ## Types:
 

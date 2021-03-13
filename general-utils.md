@@ -27,6 +27,11 @@ description: >-
 ## Ivy's messed up syntaxes
 
 *  **Max/Min value for Integer: `Integer.MAX_VALUE` / `Integer.MIN_VALUE`**
+* **Priority Queue**:  [https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html](https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html)
+
+![](.gitbook/assets/image%20%286%29.png)
+
+![](.gitbook/assets/image%20%285%29.png)
 
 ## ASCII Table
 
