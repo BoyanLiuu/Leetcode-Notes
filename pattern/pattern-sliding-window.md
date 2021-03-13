@@ -5,7 +5,7 @@
 * It is usually dealing with an **`array`** or a **`linked list`** with its **`subarray`**.
 * A problem can be solved by two pointers forming a range/window to help us **reduce the total cases we need to consider**, such that the corresponding **time complexity will reduce** too.
 * **Rules** that holds a sliding window: 
-  * TL;DR: every narrower area within the window is valid, the wider scope is invalid.
+  * TL;DR: 
     * If a wider scope of the window is valid, the narrower scope of the window must be valid
     * If a narrower scope of the window is invalid, the wider scope of that window must be invalid
 * When we finding no repeating character, we record its last index, When we finding K distinct characters, We record its occurrence.

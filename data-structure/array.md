@@ -28,7 +28,12 @@ int cloneArray [][] = intArray.clone();
 maxHeap.toArray(new int[k][2]); 
 ```
 
-* 
+* Initialize ArrayList based on different elements
+
+```text
+res.add(Arrays.asList(-target, nums[left],nums[right]));
+```
+
 ### ArrayDeque in Java
 
 * It apply resizable array, and implementation of the Deque interface
