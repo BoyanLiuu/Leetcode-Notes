@@ -121,6 +121,12 @@ private int twoSumSmaller(int[] nums, int startIndex, int target) {
 
 ### [763. Partition Labels](https://leetcode.com/problems/partition-labels/)
 
+### [75. Sort Colors](https://leetcode.com/problems/sort-colors/)
+
+### [844. Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+
+### [581. Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)
+
 ## Hard:
 
 
