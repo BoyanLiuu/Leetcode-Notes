@@ -20,8 +20,11 @@
       * one pointer for marking the location to place unduplicated data
       * another for marking the index of unduplicated data 
       * switching happens when two pointers are placed correctly
+    * \*\*\*\*[**\#88** Merge Sorted Array \(easy\)](https://leetcode.com/problems/merge-sorted-array/)
+      * 2 pointers for marking the elements that need to compare
+      * update pointer and put the desired element to the target location
 
-![](../.gitbook/assets/image%20%284%29.png)
+![Image caption for \#26](../.gitbook/assets/image%20%284%29.png)
 
 * **`Balancing values`:**
   * **\[Main idea\]**: finding two values that **balancing their calculated value, \(usually sum?\)**, the very basic operation of this pattern is first to **sort the data structure**.
@@ -32,7 +35,7 @@
 
 ### [1. Two Sum](https://leetcode.com/problems/two-sum/)
 
-* use map, key is current element, and value is its complement, at every step we check whether the complement exist  or not.  Time Complexity: O\(N\). Space Complexity: O\(N\)
+* use map, the key is a current element, and value is its complement, at every step we check whether the complement exists or not.  Time Complexity: O\(N\). Space Complexity: O\(N\)
 
 ### [167. Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-iii-data-structure-design/)
 
@@ -62,8 +65,8 @@
 
 * a + b + c = 0   which means a + b = -c
 * we need to find all the unique triplets. To handle this, we have to skip any duplicate number. Since we will be sorting the array, so all the duplicate numbers will be next to each other and are easier to skip.
-* In the main function , we need to skip duplicate before searching 
-* In the helper function, we need to keep finding other target even if we already got the target, we also need to skip same element
+* In the main function, we need to skip duplicate before searching 
+* In the helper function, we need to keep finding other targets even if we already got the target, we also need to skip the same element
 
 ```text
  if(tempSum == target){

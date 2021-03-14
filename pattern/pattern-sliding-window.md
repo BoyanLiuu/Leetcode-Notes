@@ -160,14 +160,14 @@ class Solution {
 ### [1100. Find K-Length Substrings With No Repeated Characters](https://leetcode.com/problems/find-k-length-substrings-with-no-repeated-characters/)
 
 * We need to worry about repeated character and keep track of window range
-* Use hash map to record character last index 
+* Use the hash map to record character last index 
 
 ### [1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit ](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/)
 
 ### [1151. Minimum Swaps to Group All 1's Together](https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together/)
 
-* The problem is to figure out what represent window range 
-* In each of subarray, number of swap is represent by number of zero .
+* The problem is to figure out what represents window range 
+* In each subarray, the number of swaps is represented by the number of zero.
 
 ### [1423. Maximum Points You Can Obtain from Cards](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/)
 
