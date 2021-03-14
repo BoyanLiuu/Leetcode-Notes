@@ -49,6 +49,16 @@
 
 * Same idea as Two Sum
 
+### [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
+
+### [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+
+### [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+
+### [344. Reverse String](https://leetcode.com/problems/reverse-string/)
+
+### 
+
 
 
 ### 
@@ -58,8 +68,6 @@
 ## Medium:
 
 ### [1711. Count Good Meals](https://leetcode.com/problems/count-good-meals/)
-
-### 
 
 ### [15. 3Sum](https://leetcode.com/problems/3sum/)
 
@@ -122,15 +130,42 @@ private int twoSumSmaller(int[] nums, int startIndex, int target) {
 
 ### [18. 4Sum](https://leetcode.com/problems/4sum/)
 
+* Same idea as Three sum
+
 ### [763. Partition Labels](https://leetcode.com/problems/partition-labels/)
 
 ### [75. Sort Colors](https://leetcode.com/problems/sort-colors/)
 
+* We can use a Two Pointers approach while iterating through the array. Let’s say the two pointers are called low and high which are pointing to the first and the last element of the array respectively. So while iterating, we will move all 0s before low and all 2s after high so that in the end, all 1s will be between low and high
+* 想到了解法， 但是自己写的时候逻辑没捋清楚
+* Notes: When we finish swap 2, we do not increment i, since we need to check if we also need to swap i again.
+
 ### [844. Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+
+* 没写出 optimal 解法
 
 ### [581. Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)
 
+* find the first number out of sorting order from the beginning
+* find the first number out of sorting order from the end
+* find max and min in that range 
+* Expand left and right boundary
+
+### [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+
+### [845. Longest Mountain in Array](https://leetcode.com/problems/longest-mountain-in-array/)
+
+### [1570. Dot Product of Two Sparse Vectors](https://leetcode.com/problems/dot-product-of-two-sparse-vectors/)
+
+### [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+
+### [881. Boats to Save People](https://leetcode.com/problems/boats-to-save-people/)
+
 ## Hard:
+
+### [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+
+### 
 
 
 
@@ -139,6 +174,8 @@ private int twoSumSmaller(int[] nums, int startIndex, int target) {
 * 15
 * 1711
 * 259
+* 18
+* 844
 
 
 
