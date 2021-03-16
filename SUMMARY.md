@@ -5,7 +5,7 @@
 * [Coding Patterns](pattern/README.md)
   * [1. Sliding Window](pattern/pattern-sliding-window.md)
   * [2. Two Pointer](pattern/pattern-two-pointer.md)
-  * [Pattern Fast, Slow Pointer](pattern/pattern-fast-slow-pointer.md)
+  * [3. Fast, Slow Pointer](pattern/pattern-fast-slow-pointer.md)
   * [Pattern Merge Intervals](pattern/pattern-merge-intervals.md)
   * [Pattern DFS/BFS](pattern/pattern-dfs-bfs.md)
   * [Pattern Top K elements](pattern/pattern-two-heaps.md)
