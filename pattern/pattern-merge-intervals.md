@@ -1,2 +1,2 @@
-# Pattern Merge Intervals
+# 5. Merge Intervals
 

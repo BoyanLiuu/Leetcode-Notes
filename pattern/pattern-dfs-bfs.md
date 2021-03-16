@@ -1,4 +1,4 @@
-# Pattern DFS/BFS
+# 6. DFS/BFS
 
 ## Easy:
 

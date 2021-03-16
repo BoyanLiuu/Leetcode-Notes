@@ -1,2 +1,2 @@
-# Pattern Reversal of A LinkedList
+# 10. Reversal of A LinkedList
 

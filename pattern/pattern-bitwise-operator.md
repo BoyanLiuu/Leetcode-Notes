@@ -1,2 +1,2 @@
-# Pattern Bitwise Operator
+# 11. Bitwise Operator
 

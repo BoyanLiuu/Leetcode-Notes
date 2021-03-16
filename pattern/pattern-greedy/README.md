@@ -1,2 +1,2 @@
-# Pattern Greedy
+# 15. Greedy
 
