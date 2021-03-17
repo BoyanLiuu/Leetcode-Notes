@@ -60,6 +60,10 @@
 
 ### [143. Reorder List](https://leetcode.com/problems/reorder-list/)
 
+* We can use the Fast & Slow pointers method similar to Middle of the LinkedList to find the middle node of the LinkedList.
+* Once we have the middle of the LinkedList, we will reverse the second half of the LinkedList.
+* Finally, we’ll iterate through the first half and the reversed second half to produce a LinkedList in the required order.
+
 ### [202. Happy Number](https://leetcode.com/problems/happy-number/)
 
 ### [457. Circular Array Loop](https://leetcode.com/problems/circular-array-loop/)
@@ -70,6 +74,16 @@
 * then when fast pointer move till null, the slow pointer represent the Node we want to remove. We can use a prev node to remove slow pointer
 
 ## Hard:
+
+
+
+## The problem I  struggle with:
+
+* 142
+* 457
+* 202
+
+
 
 
 
