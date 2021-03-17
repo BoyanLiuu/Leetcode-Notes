@@ -68,6 +68,8 @@
 
 ### [457. Circular Array Loop](https://leetcode.com/problems/circular-array-loop/)
 
+* 3，1，2 return true , 初始点不一定是从index 0 开始
+* 
 ### [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 
 * use a while loop to move fast pointer at n step
@@ -82,6 +84,7 @@
 * 142
 * 457
 * 202
+* 457
 
 
 
