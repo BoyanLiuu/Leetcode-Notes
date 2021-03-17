@@ -56,7 +56,7 @@
 
 ### [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
 
-* Once we find out the intersection point, we start iterateing from that point and head . When we meet , that is the node we return.
+* Once we find out the intersection point, we start iterating from that point and head. When we meet, that is the node we return.
 
 ### [143. Reorder List](https://leetcode.com/problems/reorder-list/)
 
@@ -71,7 +71,7 @@
 ### [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 
 * use a while loop to move fast pointer at n step
-* then when fast pointer move till null, the slow pointer represent the Node we want to remove. We can use a prev node to remove slow pointer
+* then when fast pointer moves till null, the slow pointer represents the Node we want to remove. We can use a prev node to remove the slow pointer
 
 ## Hard:
 

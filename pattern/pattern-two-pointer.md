@@ -153,19 +153,13 @@ private int twoSumSmaller(int[] nums, int startIndex, int target) {
 
 ### [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
 
-* 想出来写法， 然而测试写法时候没写是正确。
-
 ### [845. Longest Mountain in Array](https://leetcode.com/problems/longest-mountain-in-array/)
 
-* 思路一样，写对了80%
+### [1570. Dot Product of Two Sparse Vectors](https://leetcode.com/problems/dot-product-of-two-sparse-vectors/)
 
 ### [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 
-* the area is bound by short height, if we move inward for short height, we have better chance get a  larger max area, despite the reduction in the width
-
 ### [881. Boats to Save People](https://leetcode.com/problems/boats-to-save-people/)
-
-* Greedy + two pointer I did it!
 
 ## Hard:
 
@@ -182,7 +176,6 @@ private int twoSumSmaller(int[] nums, int startIndex, int target) {
 * 259
 * 18
 * 844
-* 845
 
 
 
