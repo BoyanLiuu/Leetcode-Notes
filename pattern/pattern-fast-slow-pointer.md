@@ -66,6 +66,9 @@
 
 ### [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 
+* use a while loop to move fast pointer at n step
+* then when fast pointer move till null, the slow pointer represent the Node we want to remove. We can use a prev node to remove slow pointer
+
 ## Hard:
 
 
