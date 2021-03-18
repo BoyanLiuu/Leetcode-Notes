@@ -6,10 +6,11 @@ This pattern describes an efficient technique to deal with overlapping intervals
 
 Given two intervals \( a and b \), there will be six different ways the two intervals can relate to each other:
 
-![](../.gitbook/assets/image%20%2810%29.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
-### Common Pattern: 
 
+
+* Don't use a\[0\] - b\[0\] to sort array or arraylist. If the number is too big or too small. It will cause Integer overflow issue.
 * Merging \[a, b\] and \[c, d\] \(suppose intervals are sorted on \[0\] then \[1\]\)
   * Partial overlapping: **a---c---b---d**
   * Inclusion: **a---c---d---b**
@@ -18,7 +19,7 @@ Given two intervals \( a and b \), there will be six different ways the two inte
   * 2 intervals overlap iff \(c &lt; b\)
   * Overlapped interval = \[a, Math.max\(b,d\)\]
 
-
+ 
 
 
 
@@ -87,6 +88,9 @@ class Solution {
 
 ### [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
 
+* if two intervals are over lap, we find out the min end between them, and increment res
+* if two intervals are not overlap, we just update end 
+
 ### [253. Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)
 
 * A good test case: `[[4,5], [2,3], [2,4], [3,5]]`
@@ -99,6 +103,10 @@ class Solution {
   * The heap will always have all the overlapping meetings, so we will need rooms for all of them. Keep a counter to remember the maximum size of the heap at any time which will be the minimum number of rooms needed.
 
 ### [452 Minimum Number of Arrows to burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/)
+
+* Care for integer overflow for very large and very small number
+
+### [616. Add Bold Tag in String](https://leetcode.com/problems/add-bold-tag-in-string/)
 
 ### 
 
