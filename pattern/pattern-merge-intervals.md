@@ -1,14 +1,22 @@
-# 5. Merge Intervals
+# 4. Merge Intervals
 
 ## Summary:
 
 This pattern describes an efficient technique to deal with overlapping intervals. In a lot of problems involving intervals, we either need to find overlapping intervals or merge intervals if they overlap.
 
-Given two intervals \(‘a’ and ‘b’\), there will be six different ways the two intervals can relate to each other:
+Given two intervals \( a and b \), there will be six different ways the two intervals can relate to each other:
 
 ![](../.gitbook/assets/image%20%2810%29.png)
 
+### Common Pattern: 
 
+* Merging \[a, b\] and \[c, d\] \(suppose intervals are sorted on \[0\] then \[1\]\)
+  * Partial overlapping: **a---c---b---d**
+  * Inclusion: **a---c---d---b**
+  * Not overlapping: **a---b---c---d**
+* Observation: 
+  * 2 intervals overlap iff \(c &lt; b\)
+  * Overlapped interval = \[a, Math.max\(b,d\)\]
 
 
 
@@ -19,7 +27,8 @@ Given two intervals \(‘a’ and ‘b’\), there will be six different ways th
 ### [252. Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)
 
 * Sort by start time, just like merge intervals idea
-* Or sort by end time, 
+* Or sort by the end time
+* merging using the common pattern
 
 
 
@@ -28,7 +37,7 @@ Given two intervals \(‘a’ and ‘b’\), there will be six different ways th
 ### [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/)
 
 * Sort the intervals on the start time to ensure a.start &lt;= b.start
-* If ‘a’ overlaps ‘b’ \(i.e. b.start &lt;= a.end\), we need to merge them into a new interval ‘c’ such that:
+* If a overlaps b \(i.e. b.start &lt;= a.end\), we need to merge them into a new interval ‘c’ such that:
 
 ```text
 c.start = a.start
