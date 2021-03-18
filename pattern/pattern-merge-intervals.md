@@ -80,12 +80,7 @@ class Solution {
 
 ### [253. Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)
 
-* A good test case:
-* General Idea:
-  * We will schedule the first meeting \(let’s call it m1\) in one room \(let’s call it r1\).
-  * If the next meeting m2 is not overlapping with m1, we can safely schedule it in the same room r1.
-  * If the next meeting m3 is overlapping with m2 we can’t use r1, so we will schedule it in another room \(let’s call it r2\).
-  * Now if the next meeting m4 is overlapping with m3, we need to see if the room r1 has become free. For this, we need to keep track of the end time of the meeting happening in it. If the end time of m2 is before the start time of m4, we can use that room r1, otherwise, we need to schedule m4 in another room r3
+* A good test case: `[[4,5], [2,3], [2,4], [3,5]]`
 * Algorithm:
   * Sort all the meetings on their start time.
   * Create a min-heap to store all the active meetings. This min-heap will also be used to find the active meeting with the smallest end time.
