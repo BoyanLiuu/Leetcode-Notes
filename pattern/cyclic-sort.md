@@ -3,7 +3,9 @@
 ## Summary:
 
 * This pattern describes an interesting approach to deal with problems involving arrays containing numbers _in a given range._
-* \_\_
+* \*\*\*\*🗝 **key points when solving similar problems** --------------------------------------------------------
+  * Be careful about the relationship between indices and their value when doing cyclic sort
+  * ---------------------------------------------------------------------------------------------------------------
 
 ## Easy:
 
