@@ -77,7 +77,7 @@ class Solution {
 
 ### [986. Interval List Intersections](https://leetcode.com/problems/interval-list-intersections/)
 
-* find   `start = max(a.start, b.start)    end = min(a.end, b.end)` 
+* find `start = max(a.start, b.start)    end = min(a.end, b.end)` 
 * If start &gt; end , then we do not have overlapping interval, 
 * move pointer where we have smallest end point.
 
@@ -122,7 +122,7 @@ class Solution {
 
 ### [759. Employee Free Time](https://leetcode.com/problems/employee-free-time/)
 
-* First naive solution: Put all employee's working hour in a list and sort them on the start time. Then we can iterate through the list to find the gaps
+* First naive solution: Put all employee's working hours in a list and sort them on the start time. Then we can iterate through the list to find the gaps
 * Second solution: We utilize each list is individually sorted.
   * How about we take the first interval of each employee and insert it in a Min Heap. This Min Heap can always give us the interval with the smallest start time.  Once we have the smallest start-time interval, we can then compare it with the next smallest start-time interval \(again from the Heap\) to find the gap.
 
