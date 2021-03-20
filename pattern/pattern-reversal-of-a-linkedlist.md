@@ -1,4 +1,4 @@
-# 10. Reversal of A LinkedList
+# 6. Reversal of A LinkedList
 
 ## Summary:
 

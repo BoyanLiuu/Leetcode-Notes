@@ -1,4 +1,4 @@
-# 12. Two Heaps
+# 8. Two Heaps
 
 ## Summary:
 

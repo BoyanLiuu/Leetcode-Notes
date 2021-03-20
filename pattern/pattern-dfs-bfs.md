@@ -1,4 +1,4 @@
-# 6. DFS/BFS
+# 7. DFS/BFS
 
 ## Easy:
 
