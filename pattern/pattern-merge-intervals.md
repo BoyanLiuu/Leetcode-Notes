@@ -106,7 +106,7 @@ class Solution {
 
 * Care for integer overflow for very large and very small number
 
-### [616. Add Bold Tag in String](https://leetcode.com/problems/add-bold-tag-in-string/)
+
 
 ### 
 
@@ -121,6 +121,10 @@ class Solution {
 ## Hard:
 
 ### [759. Employee Free Time](https://leetcode.com/problems/employee-free-time/)
+
+* First naive solution: Put all employee's working hour in a list and sort them on the start time. Then we can iterate through the list to find the gaps
+* Second solution: We utilize each list is individually sorted.
+  * How about we take the first interval of each employee and insert it in a Min Heap. This Min Heap can always give us the interval with the smallest start time.  Once we have the smallest start-time interval, we can then compare it with the next smallest start-time interval \(again from the Heap\) to find the gap.
 
 ### Maximum CPU Load
 
@@ -140,6 +144,7 @@ Solution:
 * 986
 * 252
 * 253
+* 759
 
 
 
