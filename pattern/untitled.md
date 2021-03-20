@@ -1,4 +1,4 @@
 # Untitled
 
-Sweep Line   Eulerian Path
+Eulerian Path
 
