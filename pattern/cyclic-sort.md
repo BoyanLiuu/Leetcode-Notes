@@ -3,17 +3,11 @@
 ## Summary:
 
 * This pattern describes an interesting approach to deal with problems involving arrays containing numbers _in a given range._
-* \*\*\*\*🗝 **key points when solving similar problems** --------------------------------------------------------
-  * Be careful about the relationship between indices and their value when doing cyclic sort
-  * ---------------------------------------------------------------------------------------------------------------
+* \_\_
 
 ## Easy:
 
 ### [268. Missing Number](https://leetcode.com/problems/missing-number/)
-
-* Exact same idea as Cyclic Sort 
-
-### [645. Set Mismatch](https://leetcode.com/problems/set-mismatch/)
 
 * Exact same idea as Cyclic Sort
 
@@ -49,41 +43,9 @@
 
 ## Medium:
 
-### [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)
-
-* Exact same idea as Cyclic Sort
-
-```text
-  public static int findNumber(int[] nums) {
-    int i = 0;
-    while (i < nums.length) {
-      if (nums[i] != i + 1) {
-        if (nums[i] != nums[nums[i] - 1])
-          swap(nums, i, nums[i] - 1);
-        else // we have found the duplicate
-          return nums[i];
-      } else {
-        i++;
-      }
-    }
-
-    return -1;
-  }
-
-  private static void swap(int[] arr, int i, int j) {
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-  }
-```
-
 ### [448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
 
-* Exact same idea as Cyclic Sort
-
 ### [442. Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
-
-* Exact same idea as Cyclic Sort
 
 ## Hard:
 
