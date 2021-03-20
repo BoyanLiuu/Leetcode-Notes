@@ -9,7 +9,9 @@
 
 ### [268. Missing Number](https://leetcode.com/problems/missing-number/)
 
-* Exact same idea as Cyclic Sort
+* Exact same idea as Cyclic Sort 
+
+### [645. Set Mismatch](https://leetcode.com/problems/set-mismatch/)
 
 ## Cyclic Sort:
 
@@ -76,6 +78,8 @@
 * Exact same idea as Cyclic Sort
 
 ### [442. Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
+
+* Exact same idea as Cyclic Sort
 
 ## Hard:
 
