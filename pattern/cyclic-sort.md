@@ -7,6 +7,10 @@
 
 ## Easy:
 
+### [268. Missing Number](https://leetcode.com/problems/missing-number/)
+
+* Exact same idea as Cyclic Sort
+
 ## Cyclic Sort:
 
 **Question:** Given an array containing n objects from 1 to n, Sort the array in-place and in O\(N\) ![](../.gitbook/assets/image%20%2812%29.png) 
@@ -39,7 +43,15 @@
 
 ## Medium:
 
+### [448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
+
+### [442. Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
+
 ## Hard:
+
+### [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
+
+### 
 
 
 
