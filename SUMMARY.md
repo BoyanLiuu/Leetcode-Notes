@@ -24,6 +24,7 @@
     * [Topological Sort](pattern/pattern-sort/topological-sort.md)
   * [17. Greedy](pattern/pattern-greedy/README.md)
     * [2. Recursion](pattern/pattern-greedy/pattern-recursion.md)
+  * [Untitled](pattern/untitled.md)
 * [Data Structure](data-structure/README.md)
   * [Array](data-structure/array.md)
   * [Strings](data-structure/strings.md)
@@ -33,5 +34,7 @@
   * [Graphs](data-structure/graphs.md)
   * [Stacks and Queues](data-structure/stacks-and-queues.md)
   * [LinkedList](data-structure/linkedlist.md)
-* [Design](design.md)
+* [Class Design Question](class-design-question.md)
+* [OOD](design.md)
+* [Behavior Question:](behavior-question.md)
 
