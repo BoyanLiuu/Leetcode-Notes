@@ -43,6 +43,8 @@
 
 ## Medium:
 
+### [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)
+
 ### [448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
 
 ### [442. Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
