@@ -2,7 +2,7 @@
 
 ## Summary:
 
-3/21
+In-place Reversal of a LinkedList pattern describes an efficient way to solve the problem.
 
 
 
@@ -12,9 +12,15 @@
 
 ## Easy:
 
+### [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
+
+### 
+
 
 
 ## Medium:
+
+[92. Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)
 
 
 
