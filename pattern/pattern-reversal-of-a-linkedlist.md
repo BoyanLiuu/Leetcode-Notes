@@ -16,7 +16,7 @@ In-place Reversal of a LinkedList pattern describes an efficient way to solve th
 
 ### [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 
-Time complexity： O\(N\) . Space Complexity: O\(1\)
+Time complexity: O\(N\). Space Complexity: O\(1\)
 
 ```text
 class Solution {
@@ -37,7 +37,18 @@ class Solution {
 }
 ```
 
-### 
+stunning  recursive  solution:
+
+```text
+public ListNode reverseList(ListNode head) {
+    if (head == null || head.next == null) return head;
+    
+    ListNode p = reverseList(head.next); // passing back head pointer using p
+    head.next.next = head; // turning the pointer direction
+    head.next = null; // cutoff current.next, necessary for tail pointer.
+    return p;
+}
+```
 
 
 
