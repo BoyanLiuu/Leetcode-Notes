@@ -4,6 +4,8 @@
 
 In-place Reversal of a LinkedList pattern describes an efficient way to solve the problem.
 
+* Use dummy node for easy manipulation
+
 
 
 
@@ -13,6 +15,27 @@ In-place Reversal of a LinkedList pattern describes an efficient way to solve th
 ## Easy:
 
 ### [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
+
+Time complexity： O\(N\) . Space Complexity: O\(1\)
+
+```text
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode cur = head;
+        
+        while(cur != null){
+            //store next pointer
+            ListNode next = cur.next;
+            //connect cur pointer with prev pointer
+            cur.next = prev;
+            prev = cur;
+            cur = next; 
+        }
+        return prev;
+    }
+}
+```
 
 ### 
 
@@ -51,7 +74,8 @@ If, in the end, you are left with a sub-list with less than ‘k’ elements, re
 
 ## The problem I  struggle with:
 
-* * * 
+* 92
+* * 
 
 
 
