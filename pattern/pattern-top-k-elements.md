@@ -28,6 +28,10 @@ This pattern uses two Heaps to solve these problems; A Min Heap to find the smal
 
 ### [295. Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 
+* Brutal force: Inserting a number in a sorted list ,It will take O\(N\) time.
+* Better Solution: Utilize the fact that we don’t need the fully sorted list - we are only interested in finding the middle element?
+* Assume ‘x’ is the median of a list. This means that half of the numbers in the list will be smaller than \(or equal to\) ‘x’ and half will be greater than \(or equal to\) ‘x’. This leads us to an approach where we can divide the list into two halves: one half to store all the smaller numbers \(let’s call it smallNumList\) and one half to store the larger numbers \(let’s call it largNumList\).The median of all the numbers will either be the largest number in the smallNumList or the smallest number in the largNumList. If the total number of elements is even, the median will be the average of these two numbers.
+* 
 ### [480. Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
 
 ### [502. IPO](https://leetcode.com/problems/ipo/)
