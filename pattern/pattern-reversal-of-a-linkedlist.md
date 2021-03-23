@@ -69,7 +69,7 @@ public ListNode reverseList(ListNode head) {
 If, in the end, you are left with a sub-list with less than ‘k’ elements, reverse it too.  
 
 
-**Answer:**
+**Answer:**  It has same idea as question 25.
 
 
 
