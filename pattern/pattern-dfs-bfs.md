@@ -12,7 +12,7 @@
 
 ## Code snippets:
 
-* How to traverse 4 direction in an array
+* How to traverse 4 direction in array
 
 ```text
 int[][] directions = { {-1, 0}, {0, 1}, {1, 0}, {0, -1}};
