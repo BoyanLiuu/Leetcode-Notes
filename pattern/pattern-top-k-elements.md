@@ -22,6 +22,13 @@ This pattern uses two Heaps to solve these problems; A Min Heap to find the smal
 
 ### [436. Find Right Interval](https://leetcode.com/problems/find-right-interval/)
 
+* The brutal force is O\(N^2\), 
+* We can utilize the Two Heaps approach. We can push all intervals into two heaps: one heap to sort the intervals on maximum start time \(let’s call it maxStartHeap\) and the other on maximum end time \(let’s call it maxEndHeap\). We can then iterate through all intervals of the \`maxEndHeap’ to find their next interval. Our algorithm will have the following steps
+  * Take out the top \(having highest end\) interval from the maxEndHeap to find its next interval. Let’s call this interval topEnd.
+  * Find an interval in the maxStartHeap with the closest start greater than or equal to the start of topEnd. Since maxStartHeap is sorted by ‘start’ of intervals, it is easy to find the interval with the highest ‘start’. Let’s call this interval topStart.
+  * Add the index of topStart in the result array as the next interval of topEnd. If we can’t find the next interval, add ‘-1’ in the result array.
+  * Put the topStart back in the maxStartHeap, as it could be the next interval of other intervals.
+
 
 
 ## Hard:
@@ -83,11 +90,21 @@ class MedianFinder {
 
 ### [502. IPO](https://leetcode.com/problems/ipo/)
 
+* While selecting a project, we will do two things:
+  * Find all the projects that we can choose with the available capital.
+  * From the list of projects in the 1st step, choose the project that gives us a maximum profit.
+  * Follow Two heaps approach similar to 295
+    * Add all project capitals to a min-heap, so that we can select a project with the smallest capital requirement.
+    * Go through the top projects of the min-heap and filter the projects that can be completed within our available capital. Insert the profits of all these projects into a max-heap, so that we can choose a project with the maximum profit.
+    * Finally, select the top project of the max-heap for investment.
+    * Repeat the 2nd and 3rd steps for the required number of projects.
+
 
 
 ## The problem I  struggle with:
 
-* * * 
+* All of them are hard
+
 
 
 
