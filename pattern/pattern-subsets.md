@@ -107,6 +107,8 @@ public static List<List<Integer>> findSubsets(int[] nums) {
 
 ### [46. Permutations](https://leetcode.com/problems/permutations/)
 
+*  we add current item in all the index of current list
+
 ![](../.gitbook/assets/image%20%2816%29.png)
 
 ```text
@@ -152,7 +154,9 @@ public static List<List<Integer>> findPermutations(int[] nums) {
 
 ## The problem I  struggle with:
 
-* * * 
+* 90
+* 78
+* 
 
 
 
