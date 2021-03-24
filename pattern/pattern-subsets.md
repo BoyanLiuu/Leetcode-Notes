@@ -4,6 +4,8 @@
 
 This pattern aimed at solving problems about permutations and combinations of a given set of elements using BFS approach.
 
+* 2^N permutation
+* N！for all the combination of subset
 * Use deep copy when adding list
 
 ```text
@@ -68,8 +70,6 @@ To handle this instead of adding cur item to all the existing subsets, we only a
 
 //This solution looks like above graph
     public List<List<Integer>> subsets(int[] nums) {
-        // sort the numbers to handle duplicates
-        Arrays.sort(nums);
         List<List<Integer>> subsets = new ArrayList<>();
         subsets.add(new ArrayList<>());
         int startIndex = 0, endIndex = 0;
@@ -138,6 +138,8 @@ public static List<List<Integer>> findPermutations(int[] nums) {
 
 ### [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
 
+* Same idea as subset
+
 ### [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
 
 ### [320. Generalized Abbreviation](https://leetcode.com/problems/generalized-abbreviation/)🔓 
@@ -156,7 +158,9 @@ public static List<List<Integer>> findPermutations(int[] nums) {
 
 * 90
 * 78
-* 
+* 全部都不会。。。 
+* 784 略微写出来一点了
+
 
 
 
