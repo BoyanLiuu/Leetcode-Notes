@@ -4,6 +4,12 @@
 
 This pattern aimed at solving problems about permutations and combinations of a given set of elements using BFS approach.
 
+* Use deep copy when adding list
+
+```text
+result.add(new ArrayList<>(curList));
+```
+
 
 
 ## Easy:
@@ -12,9 +18,15 @@ This pattern aimed at solving problems about permutations and combinations of a 
 
 ## Medium:
 
+### [90. Subsets II](https://leetcode.com/problems/subsets-ii/)
+
 ### [78. Subsets](https://leetcode.com/problems/subsets/)
 
-### [90. Subsets II](https://leetcode.com/problems/subsets-ii/)
+* 教程说是使用BFS但我认为是使用DFS，It add all the way to 1,5,3 and then backtrack and add \[1,3 \], \[5\],\[5,3\],\[3\]
+* Generate all the subset is 2^N, and each time we need to use deep copy the list which cost O\(N\), the total time complexity is N\*2^N
+* Space Complexity  is  we will have a total of O\(2^N\)subsets, and each subset can take up to O\(N\) space, therefore, the space complexity of our algorithm will be O\(N\*2^N\)
+
+![](../.gitbook/assets/image%20%2818%29.png)
 
 ![](../.gitbook/assets/image%20%2817%29.png)
 
