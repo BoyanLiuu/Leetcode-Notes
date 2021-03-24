@@ -20,6 +20,40 @@ result.add(new ArrayList<>(curList));
 
 ### [90. Subsets II](https://leetcode.com/problems/subsets-ii/)
 
+* Follow subset pattern, First we sort the array
+* Follow the same BFS approach but whenever we are about to process a duplicate \(i.e., when the current and the previous numbers are same\), _**instead of adding the current number \(which is a duplicate\) to all the existing subsets, only add it to the subsets which were created in the previous step.**_
+
+![](../.gitbook/assets/image%20%2820%29.png)
+
+```text
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+    // sort the numbers to handle duplicates
+    Arrays.sort(nums);
+    List<List<Integer>> subsets = new ArrayList<>();
+    subsets.add(new ArrayList<>());
+    int startIndex = 0, endIndex = 0;
+    for (int i = 0; i < nums.length; i++) {
+        startIndex = 0;
+        // if current and the previous elements are same, create new subsets only from the subsets 
+        // added in the previous step
+        if (i > 0 && nums[i] == nums[i - 1])
+            startIndex = endIndex + 1;
+        
+        
+        endIndex = subsets.size() - 1;
+        for (int j = startIndex; j <= endIndex; j++) {
+            // create a new subset from the existing subset and add the current element to it
+            List<Integer> set = new ArrayList<>(subsets.get(j));
+            set.add(nums[i]);
+            subsets.add(set);
+        }
+    }
+    return subsets;
+}
+```
+
+To handle this instead of adding cur item to all the existing subsets, we only add it to the new subsets which were created in the previous step:
+
 ### [78. Subsets](https://leetcode.com/problems/subsets/)
 
 * 教程说是使用BFS但我认为是使用DFS，It add all the way to 1,5,3 and then backtrack and add \[1,3 \], \[5\],\[5,3\],\[3\]
@@ -31,6 +65,28 @@ result.add(new ArrayList<>(curList));
 ![](../.gitbook/assets/image%20%2817%29.png)
 
 ```text
+
+//This solution looks like above graph
+    public List<List<Integer>> subsets(int[] nums) {
+        // sort the numbers to handle duplicates
+        Arrays.sort(nums);
+        List<List<Integer>> subsets = new ArrayList<>();
+        subsets.add(new ArrayList<>());
+        int startIndex = 0, endIndex = 0;
+        for (int i = 0; i < nums.length; i++) {
+          startIndex = 0;
+          endIndex = subsets.size() - 1;
+          for (int j = startIndex; j <= endIndex; j++) {
+            // create a new subset from the existing subset and add the current element to it
+            List<Integer> set = new ArrayList<>(subsets.get(j));
+            set.add(nums[i]);
+            subsets.add(set);
+          }
+        }
+        return subsets;
+    }
+
+//This solution does not looks like above graph
 public static List<List<Integer>> findSubsets(int[] nums) {
     List<List<Integer>> subsets = new ArrayList<>();
     // start by adding the empty subset
