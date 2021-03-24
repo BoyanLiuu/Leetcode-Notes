@@ -1,6 +1,6 @@
 # 9.Subsets
 
-## Summary:
+## Summary:\(Not very familiar\)
 
 This pattern aimed at solving problems about permutations and combinations of a given set of elements using BFS approach.
 
