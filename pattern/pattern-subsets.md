@@ -142,10 +142,40 @@ public static List<List<Integer>> findPermutations(int[] nums) {
 
 ### [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
 
+* Follow permutations pattern46
+* Two rules:
+  * We can’t add more than ‘N’ open parenthesis.
+  * To keep the parentheses balanced, we can add a close parenthesis \) only when we have already added enough open parenthesis \(. For this, we can keep a count of open and close parenthesis with every combination.
+* Algorithm: N=3
+  * Start with an empty combination: “”,
+  * At every step, let’s take all combinations of the previous step and add \( or \) keeping the above-mentioned two rules in mind.
+  * For the empty combination, we can add \( since the count of open parenthesis will be less than ‘N’. We can’t add \) as we don’t have an equivalent open parenthesis, so our list of combinations will now be: “\(”
+  * For the next iteration, let’s take all combinations of the previous set. For “\(” we can add another \( to it since the count of open parenthesis will be less than ‘N’. We can also add \) as we do have an equivalent open parenthesis, so our list of combinations will be: “\(\(”, “\(\)”
+  * In the next iteration, for the first combination “\(\(”, we can add another \( to it as the count of open parenthesis will be less than ‘N’, we can also add \) as we do have an equivalent open parenthesis. This gives us two new combinations: “\(\(\(” and “\(\(\)”. For the second combination “\(\)”, we can add another \( to it since the count of open parenthesis will be less than ‘N’. We can’t add \) as we don’t have an equivalent open parenthesis, so our list of combinations will be: “\(\(\(”, “\(\(\)”, \(\)\("
+  * Following the same approach, next we will get the following list of combinations: “\(\(\(\)”, “\(\(\)\(”, “\(\(\)\)”, “\(\)\(\(”, “\(\)\(\)”
+  * Next we will get: “\(\(\(\)\)”, “\(\(\)\(\)”, “\(\(\)\)\(”, “\(\)\(\(\)”, “\(\)\(\)\(”
+  * Finally, we will have the following combinations of balanced parentheses: “\(\(\(\)\)\)”, “\(\(\)\(\)\)”, “\(\(\)\)\(\)”, “\(\)\(\(\)\)”, “\(\)\(\)\(\)”
+
+![](../.gitbook/assets/image%20%2821%29.png)
+
 ### [320. Generalized Abbreviation](https://leetcode.com/problems/generalized-abbreviation/)🔓 
+
+* This can follow Blanaced Parentheses  question
+* **At each step we have two option:**
+  * Abbreviate the current character or
+  * Add the current character to the output and skip abbreviation
+* Algorithm: BAT
+
+  * Start with an empty word: “”
+  * At every step, we will take all the combinations from the previous step and apply the two abbreviation rules to the next character.
+  * Take the empty word from the previous step and add the first character to it. We can either abbreviate the character or add it \(by skipping abbreviation\). This gives us two new words: \_, B.
+  * and so on
+
+![](../.gitbook/assets/image%20%2822%29.png)
 
 ### [241. Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/)
 
+* 
 ### [96. Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/)
 
 ### [95. Unique Binary Search Trees II](https://leetcode.com/problems/unique-binary-search-trees-ii/)
