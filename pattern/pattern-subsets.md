@@ -185,7 +185,26 @@ public static List<List<Integer>> findPermutations(int[] nums) {
 
 ### [96. Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/)
 
+* Follow evaluate expression problem 241
+
 ### [95. Unique Binary Search Trees II](https://leetcode.com/problems/unique-binary-search-trees-ii/)
+
+* we can iterate from 1 to ‘n’ and consider each number as the root of a tree and make two recursive calls to count the number of left and right sub-tree
+
+```text
+    public int numTrees(int n) {
+    if (n <= 1)
+      return 1;
+    int count = 0;
+    for (int i = 1; i <= n; i++) {
+      // making 'i' root of the tree
+      int countOfLeftSubtrees = numTrees(i - 1);
+      int countOfRightSubtrees = numTrees(n - i);
+      count += (countOfLeftSubtrees * countOfRightSubtrees);
+    }
+    return count;
+    }
+```
 
 ## Hard:
 
