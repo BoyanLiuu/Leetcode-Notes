@@ -175,7 +175,14 @@ public static List<List<Integer>> findPermutations(int[] nums) {
 
 ### [241. Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/)
 
-* 
+* This question follow  question 22 , 
+* Algorithm: 1 +2 \*3
+  * We can iterate through the expression character-by-character.
+  * we can break the expression into two halves whenever we get an operator \(+, -, \*\).
+    * Simulate adding \(\) at this character
+  * The two parts can be calculated by recursively calling the function.
+  * Once we have the evaluation results from the left and right halves, we can combine them to produce all results.
+
 ### [96. Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/)
 
 ### [95. Unique Binary Search Trees II](https://leetcode.com/problems/unique-binary-search-trees-ii/)
