@@ -21,11 +21,16 @@ PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
 );
 
 
-// involve  map
-
+// Create a map entry priority queue
 PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
          (a,b) -> a.getValue()==b.getValue() ? b.getKey().compareTo(a.getKey()) : a.getValue()-b.getValue()
 );
+
+// add map into the max heap
+pq.addAll(characterFrequencyMap.entrySet());
+
+Map.Entry<Character, Integer> entry = pq.poll();
+
 ```
 
 * 
@@ -65,16 +70,15 @@ public int findKthLargest(int[] nums, int k) {
 
 * Same as 215 no variation
 
+#### [451. Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/)
+
+#### [703. Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
+
+* 略微有变化但是还是 same idea as 215
+
+#### [**658. Find K Closest Elements**](https://leetcode.com/problems/find-k-closest-elements/)\*\*\*\*
+
 ## Medium:
-
-### Connect Ropes:
-
-* 
-### [451. Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/)
-
-### [703. Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
-
-### [658. Find K Closest Elements](https://leetcode.com/problems/find-k-closest-elements/)
 
 ### Maximum Distinct Elements 
 
