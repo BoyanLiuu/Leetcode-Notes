@@ -33,11 +33,6 @@ PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
 
 ## Easy:
 
-* 
-
-
-## Medium:
-
 ### [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
 ```text
@@ -60,9 +55,17 @@ public int findKthLargest(int[] nums, int k) {
 
 #### [973. K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/)
 
+* Same as 215 no variation
+
 #### [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 
+* Same as 215 no variation
+
 #### [692. Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/)
+
+* Same as 215 no variation
+
+## Medium:
 
 ### Connect Ropes:
 
