@@ -2,6 +2,15 @@
 
 ## Heap:
 
+Any problem that asks us to find the top/smallest/frequent ‘K’ elements among a given set falls under this pattern.
+
+
+
+The best data structure that comes to mind to keep track of ‘K’ elements is Heap. This pattern will make use of the Heap to solve multiple problems dealing with ‘K’ elements at a time from a set of given elements.
+
+* Top K largest: Using min heap,
+* Top k smallest : Using max heap
+
 ## Some code snippet:
 
 * How to create a heap
@@ -10,6 +19,13 @@
 PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
         (a,b) -> a.getValue()==b.getValue() ? b.getKey().compareTo(a.getKey()) : a.getValue()-b.getValue()
 );
+
+
+// involve  map
+
+PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
+         (a,b) -> a.getValue()==b.getValue() ? b.getKey().compareTo(a.getKey()) : a.getValue()-b.getValue()
+);
 ```
 
 * 
@@ -17,19 +33,40 @@ PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
 
 ## Easy:
 
-* [692. Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/)
-
+* 
 
 
 ## Medium:
 
 ### [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
+```text
+public int findKthLargest(int[] nums, int k) {
+         PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>((n1, n2) -> n1 - n2);
+        
+        for(Integer cur : nums){
+            minHeap.add(cur);
+            if(minHeap.size() > k)
+                minHeap.poll();
+        }
+        return minHeap.peek(); 
+}
+```
+
+* The typical problem , in top K elements, 
+* we iterate elements in Heap and keep K elements in Heap.
+  * We get smallest number in a min-heap in constant time and re construct the heap take O\(logK\), as the heap need to readjust after the removal of an element
+  * Total Time complexity: O\(KlogK\), space complexity: O\(K\)
+
 ### [973. K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/)
+
+* Exact same idea as 215,  no variation
 
 ### Connect Ropes:
 
 ### [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
+
+* Exact same idea as 215,  no variation
 
 ### [692. Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/)
 
