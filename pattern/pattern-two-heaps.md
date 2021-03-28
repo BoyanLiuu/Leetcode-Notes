@@ -85,17 +85,32 @@ public int findKthLargest(int[] nums, int k) {
 * [1481. Least Number of Unique Integers after K Removals](https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/)
 * We first find the frequencies of all the numbers
 * Then push all numbers that are not distinct in a min Heap based on their frequencies.
-* At each step, we try to remove current occurance  - 1, if size of K &gt;=0 then distinct number + 1
+* At each step, we try to remove current occurrence  - 1, if size of K &gt;=0 then distinct number + 1
 
 ### [767. Reorganize String](https://leetcode.com/problems/reorganize-string/)
 
+*  In each step, we should append one occurrence of the highest frequency character to the output string. We will not put this character back in the heap to ensure that no two same characters are adjacent to each other. In the next step, we should process the next most frequent character from the heap in the same way and then, at the end of this step, insert the character from the previous step back to the heap after decrementing its frequency.
+
+## **Hard**
+
 ### [358. Rearrange String k Distance Apart](https://leetcode.com/problems/rearrange-string-k-distance-apart/)
+
+* Quite similar to rearrange String, we will re-insert the character after K iterations, We can keep track of previous characters in a queue to insert them back in the heap after K  iterations
 
 ### [621. Task Scheduler](https://leetcode.com/problems/task-scheduler/)
 
 ### [895. Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack/)
 
-### [719. Find K-th Smallest Pair Distance](https://leetcode.com/problems/find-k-th-smallest-pair-distance/)
+\*\*\*\*
+
+## The Problem I  struggle:
+
+* 767
+* 358
+* 621
+* 895
+
+
 
 ### 
 
