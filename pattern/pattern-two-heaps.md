@@ -82,6 +82,11 @@ public int findKthLargest(int[] nums, int k) {
 
 ### Maximum Distinct Elements 
 
+* [1481. Least Number of Unique Integers after K Removals](https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/)
+* We first find the frequencies of all the numbers
+* Then push all numbers that are not distinct in a min Heap based on their frequencies.
+* At each step, we try to remove current occurance  - 1, if size of K &gt;=0 then distinct number + 1
+
 ### Sum of Elements
 
 ### [767. Reorganize String](https://leetcode.com/problems/reorganize-string/)
