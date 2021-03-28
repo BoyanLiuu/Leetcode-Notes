@@ -96,6 +96,7 @@ public int findKthLargest(int[] nums, int k) {
 ### [358. Rearrange String k Distance Apart](https://leetcode.com/problems/rearrange-string-k-distance-apart/)
 
 * Quite similar to rearrange String, we will re-insert the character after K iterations, We can keep track of previous characters in a queue to insert them back in the heap after K  iterations
+* we add the character back when the queue size is same as 
 
 ### [621. Task Scheduler](https://leetcode.com/problems/task-scheduler/)
 
