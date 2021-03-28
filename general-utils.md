@@ -37,6 +37,24 @@ description: >-
 
 ![](.gitbook/assets/ascii.png)
 
+
+
+## Useful code snippet:
+
+### Write own comparator:
+
+```text
+class ElementComparator implements Comparator<Element> {
+  public int compare(Element e1, Element e2) {
+    if (e1.frequency != e2.frequency)
+       return e2.frequency - e1.frequency;
+    return e2.sequenceNumber - e1.sequenceNumber;
+  }
+}
+```
+
+
+
 ## Big O Cheat Sheet
 
 ![](.gitbook/assets/bigo1.png)

@@ -140,6 +140,15 @@ class Solution {
 
 ### [895. Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack/)
 
+* Problem we need to solve:
+  * How can we keep track of the frequencies of numbers in the heap? 
+    * Use hashmap
+  * How do we know which one  to pop if two elements have same frequencies
+    * To resolve this, we need to attach a sequence number to every number to know which number came first.
+
+![](../.gitbook/assets/image%20%2823%29.png)
+
+* 
 \*\*\*\*
 
 ## The Problem I  struggle:
