@@ -101,6 +101,43 @@ public int findKthLargest(int[] nums, int k) {
 
 ### [621. Task Scheduler](https://leetcode.com/problems/task-scheduler/)
 
+*  we will use a Max Heap to execute the highest frequency task first. After executing a task we decrease its frequency and put it in a waiting list. In each iteration, we will try to execute as many as k+1 tasks. For the next iteration, we will put all the waiting tasks back in the Max Heap. If, for any iteration, we are not able to execute k+1 tasks, the CPU has to remain idle for the remaining time in the next iteration.
+
+```text
+class Solution {
+    public int leastInterval(char[] tasks, int k) {
+        int intervalCount = 0;
+        Map<Character, Integer> taskFrequencyMap = new HashMap<>();
+        for (char chr : tasks)
+            taskFrequencyMap.put(chr, taskFrequencyMap.getOrDefault(chr, 0) + 1);
+
+        PriorityQueue<Map.Entry<Character, Integer>> maxHeap = new PriorityQueue<Map.Entry<Character, Integer>>(
+        (e1, e2) -> e2.getValue() - e1.getValue());
+
+        // add all tasks to the max heap
+        maxHeap.addAll(taskFrequencyMap.entrySet());
+
+        while (!maxHeap.isEmpty()) {
+          List<Map.Entry<Character, Integer>> waitList = new ArrayList<>();
+          int n = k + 1; // try to execute as many as 'k+1' tasks from the max-heap
+          for (; n > 0 && !maxHeap.isEmpty(); n--) {
+            intervalCount++;
+            Map.Entry<Character, Integer> currentEntry = maxHeap.poll();
+            if (currentEntry.getValue() > 1) {
+              currentEntry.setValue(currentEntry.getValue() - 1);
+              waitList.add(currentEntry);
+            }
+          }
+          maxHeap.addAll(waitList); // put all the waiting list back on the heap
+          if (!maxHeap.isEmpty())
+            intervalCount += n; // we'll be having 'n' idle intervals for the next iteration
+        }
+
+        return intervalCount;
+    }
+}
+```
+
 ### [895. Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack/)
 
 \*\*\*\*
