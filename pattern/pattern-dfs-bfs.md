@@ -1,8 +1,87 @@
 # 7. DFS/BFS
 
+## Summary:
+
+### BFS:
+
+* Any problem involving the traversal of a tree in a level-by-level order can be efficiently solved using this approach. We will use a **Queue** to keep track of all the nodes of a level before we jump onto the next level.
+* This also means that the space complexity of the algorithm will be **O\(W\)**, where ‘W’ is the maximum number of nodes on any level.
+
 ## Easy:
 
+### BFS:
+
+#### [111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
+
+#### [637. Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/)
+
+#### Level Order Successor:
+
+**Question:** Given a binary tree and a node, find the level order successor of the given node in the tree. The level order successor is the node that appears right after the given node in the level order traversal.
+
+![](../.gitbook/assets/image%20%2824%29.png)
+
+**Answer:**
+
+#### Connect Level Order Siblings
+
+
+
+
+
+
+
+#### 
+
+
+
 ## Medium:
+
+### BFS:
+
+#### [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+
+#### [107. Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
+
+#### [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
+
+#### [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)
+
+#### [117. Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
+
+#### [199 Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)
+
+
+
+
+
+### DFS:
+
+
+
+#### 
+
+#### 
+
+#### 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * [994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
   * We use a delimiter \(i.e. \(row=-1, col=-1\)\) in the queue to separate cells on different levels.
