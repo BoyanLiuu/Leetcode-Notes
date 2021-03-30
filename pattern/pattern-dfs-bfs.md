@@ -41,6 +41,36 @@
 
 #### [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
+```text
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> output = new ArrayList<>();
+        
+        Queue<TreeNode> queue =  new LinkedList<>();
+        if(root ==null) return output;
+        
+        queue.add(root);
+        
+        while(!queue.isEmpty()){
+            int size =queue.size();
+            ArrayList<Integer> lst = new ArrayList<>();
+            
+            for(int i = 0; i < size; i++){
+                TreeNode temp =  queue.poll();
+                
+                lst.add(temp.val);
+                if(temp.left !=null)  queue.add(temp.left);
+                if(temp.right != null) queue.add(temp.right);
+            }
+            output.add(lst);
+        }
+        
+        return output;
+    }
+}
+```
+
+* Time complexity: O\(N\),where ‘N’ is the total number of nodes in the tree. This is due to the fact that we traverse each node once.
+
 #### [107. Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
 
 #### [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)

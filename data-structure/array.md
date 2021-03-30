@@ -45,19 +45,19 @@ res.add(Arrays.asList(-target, nums[left],nums[right]));
 
 ```text
 //Initialization
-Deque<Integer> de_que = new ArrayDeque<Integer>(10);
+Deque<Integer> de_que = new ArrayDeque<>();
 de_que.size();
 de_que.isEmpty();
 
 //act like stack FILO
-de_que.addFirst(100);
+de_que.push(100);
 de_que.peek() // check head
-de_que.poll（）// remove head
+de_que.pop（）// Pops an element from the stack represented by this deque.
 
 //act like queue FIFO
-de_que.addLast(100);
+de_que.offer(100);//it add to end of the deque, it does not throw exception
 de_que.peek() // check head
-de_que.poll（） remove head
+de_que.poll（） //remove head and return null if the queue is empty
 // loop dequeu
 for(Integer cur: de_que){
 }
