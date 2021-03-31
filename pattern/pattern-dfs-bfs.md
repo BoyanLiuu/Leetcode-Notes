@@ -9,17 +9,7 @@
 
 ## Easy:
 
-### BFS:
-
-#### Level Order Successor:
-
-**Question:** Given a binary tree and a node, find the level order successor of the given node in the tree. The level order successor is the node that appears right after the given node in the level order traversal.
-
-![](../.gitbook/assets/image%20%2824%29.png)
-
-**Answer:**
-
-#### Connect Level Order Siblings
+### BFS: None
 
 
 
@@ -74,12 +64,21 @@
   * [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
   * \*\*\*\*[111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
     * very similar idea, Since we are using bfs, so the first time we meet a leaf, we could just return that level. So we using additional queue to keep track of levels
+  * Level Order Successor:
+    * Question: Given a binary tree and a node, find the level order successor of the given node in the tree. The level order successor is the node that appears right after the given node in the level order traversal.
+  * [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)
+  * \*\*\*\*[117. Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
+    * 116的答案可以解答117。。
+  * Connect Level Order Siblings
+  * \_\_[_199 Binary Tree Right Side View_](https://leetcode.com/problems/binary-tree-right-side-view/)\_\_
+* 还有一种题型不知道算不算 bfs 或者是额外的题型
+  * 200 Number of Island:
+  * 994:Rotting Oranges:
+  * Tree Boundary:
 
-#### [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)
+#### 
 
-#### [117. Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
-
-#### [199 Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)
+#### 
 
 
 
@@ -140,4 +139,9 @@ for(int[] d : directions){
 
 
 
-* 
+
+
+## Problem I struggle with:
+
+* 199 
+
