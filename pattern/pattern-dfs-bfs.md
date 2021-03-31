@@ -7,9 +7,25 @@
 * Any problem involving the traversal of a tree in a level-by-level order can be efficiently solved using this approach. We will use a **Queue** to keep track of all the nodes of a level before we jump onto the next level.
 * This also means that the space complexity of the algorithm will be **O\(W\)**, where ‘W’ is the maximum number of nodes on any level.
 
+### DFS:
+
+* We will be using recursion \(or we can also use a stack for the iterative approach\) to keep track of all the previous \(parent\) nodes while traversing. This also means that the space complexity of the algorithm will be O\(H\)O\(H\), where ‘H’ is the maximum height of the tree
+
+
+
 ## Easy:
 
 ### BFS: None
+
+### DFS: 
+
+#### [112. Path Sum](https://leetcode.com/problems/path-sum/)
+
+#### [104: Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+
+#### 
+
+#### 
 
 
 
@@ -86,37 +102,29 @@
 
 ### DFS:
 
+#### [113. Path Sum II](https://leetcode.com/problems/path-sum-ii/)
 
+#### [437. Path Sum III](https://leetcode.com/problems/path-sum-iii/)
 
-#### 
+#### [666. Path Sum IV](https://leetcode.com/problems/path-sum-iv/)
 
-#### 
+#### [129. Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)
 
-#### 
+#### Path With Given Sequence
 
+Question: Given a binary tree and a number sequence, find if the sequence is present as a root-to-leaf path in the given tree. ![](../.gitbook/assets/image%20%2826%29.png) 
 
+Answer:
 
+#### [543：Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
 
-
-
-
-
-
-
-
-
-
+#### [687. Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/)
 
 
 
+### Hard:
 
-
-
-* [994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
-  * We use a delimiter \(i.e. \(row=-1, col=-1\)\) in the queue to separate cells on different levels.
-* 200. Number of Islands
-* [139. Word Break](https://leetcode.com/problems/word-break/)
-* [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
+#### [124. Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 
 ## Code snippets:
 
