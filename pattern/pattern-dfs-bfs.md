@@ -300,7 +300,45 @@ class Solution {
 
 * _Time Complexity:_ O\(N^2\),where ‘N’ is the total number of nodes in the tree. This is due to the fact that we traverse each node once \(which will take O\(N\)\), and for every leaf node, we might have to store its path \(by making a copy of the current path\) which will take O\(N\). The tighter time complexity is O\(NLOGN\). From a balanced binary tree, The depth is O\(log N\) so 
 * _Space Complexity:If we ignore the space required for the allPaths list, the space complexity of the above algorithm will be O\(N\) in the worst case. This space will be used to store the recursion stack. The worst-case will happen when the given tree is a linked list \(i.e., every node has only one child\). If we do not ignore allPaths list, The space complexity is O\(NlogN\)_
-* \_\_
+
+\_\_
+
+#### Sum of Path Numbers:
+
+**Question:** Given a binary tree where each node can only have a digit \(0-9\) value, each root-to-leaf path will represent a number. Find the total sum of all the numbers represented by all paths.
+
+![](../.gitbook/assets/image%20%2827%29.png)
+
+**Answer:** 
+
+Time complexity: O\(N\), Space Complexity: O\(N\)
+
+```text
+  public static int findSumOfPathNumbers(TreeNode root) {
+    return findRootToLeafPathNumbers(root, 0);
+  }
+
+  private static int findRootToLeafPathNumbers(TreeNode currentNode, int pathSum) {
+    if (currentNode == null)
+      return 0;
+
+    // calculate the path number of the current node
+    pathSum = 10 * pathSum + currentNode.val;
+
+    // if the current node is a leaf, return the current path sum.
+    if (currentNode.left == null && currentNode.right == null) {
+      return pathSum;
+    }
+
+    // traverse the left and the right sub-tree
+    return findRootToLeafPathNumbers(currentNode.left, pathSum) +
+           findRootToLeafPathNumbers(currentNode.right, pathSum);
+  }
+```
+
+#### Path With Given Sequence
+
+**Question:** Given a binary tree and a number sequence, find if the sequence is present as a root-to-leaf path in the given tree. ![](../.gitbook/assets/image%20%2826%29.png) 
 
 #### [437. Path Sum III](https://leetcode.com/problems/path-sum-iii/)  
 
@@ -308,11 +346,7 @@ class Solution {
 
 #### [129. Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)
 
-#### Path With Given Sequence
-
-Question: Given a binary tree and a number sequence, find if the sequence is present as a root-to-leaf path in the given tree. ![](../.gitbook/assets/image%20%2826%29.png) 
-
-Answer:
+#### 
 
 #### [543：Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
 
@@ -350,4 +384,5 @@ for(int[] d : directions){
 ## Problem I struggle with:
 
 * 199 
+* 112
 
