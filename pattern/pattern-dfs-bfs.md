@@ -9,7 +9,152 @@
 
 ### DFS:
 
-* We will be using recursion \(or we can also use a stack for the iterative approach\) to keep track of all the previous \(parent\) nodes while traversing. This also means that the space complexity of the algorithm will be O\(H\)O\(H\), where ‘H’ is the maximum height of the tree
+* We will be using recursion \(or we can also use a stack for the iterative approach\) to keep track of all the previous \(parent\) nodes while traversing. This also means that the space complexity of the algorithm will be O\(H\), where ‘H’ is the maximum height of the tree
+* There are three different orders for traversing a tree using DFS
+  * Preorder Traversal: root -&gt; left-&gt;right
+  * Inorder Traversal_: left-&gt;root-&gt;right_
+  * Postorder Traversal： left-&gt;right-&gt;root
+* Space complexity and Time complexity:
+  * _Time Complexity_: we visit each node exactly once, thus the time complexity is O\(N\), where N is the number of nodes.
+  * _Space Complexity_: in the worst case, the tree is completely unbalanced, e.g. each node has only one child node, the recursion call would occur NN times \(the height of the tree\), therefore the storage to keep the call stack would be O\(N\). But in the best case \(the tree is completely balanced\), the height of the tree would be log\(N\). Therefore, the space complexity in this case would be O\(log\(N\)\).
+
+#### Preorder Traversal:
+
+_Iterative:， This is similar with BFS , just change stack_
+
+
+
+```text
+public void traversePreOrderWithoutRecursion() {
+    Stack<Node> stack = new Stack<Node>();
+    Node current = root;
+    stack.push(root);
+    while(!stack.isEmpty()) {
+        current = stack.pop();
+        visit(current.value);
+        
+        if(current.right != null) {
+            stack.push(current.right);
+        }    
+        if(current.left != null) {
+            stack.push(current.left);
+        }
+    }        
+}
+```
+
+_Recursive：_
+
+```text
+public void traversePreOrder(Node node) {
+    if (node != null) {
+        visit(node.value);
+        traversePreOrder(node.left);
+        traversePreOrder(node.right);
+    }
+}
+```
+
+\_\_
+
+#### Inorder Traversal:
+
+_Iterative:_
+
+```text
+public void traverseInOrderWithoutRecursion() {
+    Stack<Node> stack = new Stack<Node>();
+    Node current = root;
+    stack.push(root);
+    while(! stack.isEmpty()) {
+        // traverse left
+        while(current.left != null) {
+            current = current.left;                
+            stack.push(current);                
+        }
+        //traverse root
+        current = stack.pop();
+        visit(current.value);
+        //traverse right
+        if(current.right != null) {
+            current = current.right;                
+            stack.push(current);
+        }
+    }
+}
+```
+
+_Recursive:_
+
+```text
+public void traverseInOrder(Node node) {
+    if (node != null) {
+        traverseInOrder(node.left);
+        visit(node.value);
+        traverseInOrder(node.right);
+    }
+}
+```
+
+\_\_
+
+#### Postorder Traversal:
+
+_Iterative:_
+
+* Push root node in stack
+* While stack is not empty
+  * Check if we already traversed left and right subtree
+  * If not then push right child and left child onto stack
+
+__
+
+```text
+public void traversePostOrderWithoutRecursion() {
+    Stack<Node> stack = new Stack<Node>();
+    Node prev = root;
+    Node current = root;
+    stack.push(root);
+
+    while (!stack.isEmpty()) {
+        current = stack.peek();
+        boolean hasChild = (current.left != null || current.right != null);
+        boolean isPrevLastChild = (prev == current.right || 
+          (prev == current.left && current.right == null));
+
+        if (!hasChild || isPrevLastChild) {
+            current = stack.pop();
+            visit(current.value);
+            prev = current;
+        } else {
+            if (current.right != null) {
+                stack.push(current.right);
+            }
+            if (current.left != null) {
+                stack.push(current.left);
+            }
+        }
+    }   
+}
+```
+
+_Recursive:_
+
+```text
+public void traversePostOrder(Node node) {
+    if (node != null) {
+        traversePostOrder(node.left);
+        traversePostOrder(node.right);
+        visit(node.value);
+    }
+}
+```
+
+\_\_
+
+\_\_
+
+
 
 
 
