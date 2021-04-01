@@ -17,6 +17,7 @@
 * Space complexity and Time complexity:
   * _Time Complexity_: we visit each node exactly once, thus the time complexity is O\(N\), where N is the number of nodes.
   * _Space Complexity_: in the worst case, the tree is completely unbalanced, e.g. each node has only one child node, the recursion call would occur NN times \(the height of the tree\), therefore the storage to keep the call stack would be O\(N\). But in the best case \(the tree is completely balanced\), the height of the tree would be log\(N\). Therefore, the space complexity in this case would be O\(log\(N\)\).
+* 通常是使用 Recursion DFS，    _Remember remove the current node from the path to backtrack,  we need to remove the current node while we are going up the recursive call stack._
 
 #### Preorder Traversal:
 
@@ -150,7 +151,21 @@ public void traversePostOrder(Node node) {
 }
 ```
 
-\_\_
+### DFS VS BFS:
+
+**Why we sometimes choose DFS over BFS?**
+
+For example , 113 path sum II
+
+ However, note that the problem statement actually asks us to return a list of all the paths that add up to a particular sum. Breadth first search moves one level at a time. That means, we would have to maintain the pathNodes lists for all the paths till a particular level/depth at the same time.
+
+
+
+Say we are at the level 10 in the tree and that level has e.g. 20 nodes. BFS uses a queue for processing the nodes. Along with 20 nodes in the queue, we would also need to maintain 20 different pathNodes lists since there is no backtracking here. That is too much of a space overhead.
+
+
+
+_The good thing about depth first search is that it uses recursion for processing one branch at a time and once we are done processing the nodes of a particular branch, we pop them from the pathNodes list thus saving on space._ At a time, this list would only contain all the nodes in a single branch of the tree and nothing more. Had the problem statement asked us the total number of paths that add up to a particular sum \(root to leaf\), then breadth first search would be an equally viable approach.
 
 \_\_
 
@@ -249,7 +264,45 @@ public void traversePostOrder(Node node) {
 
 #### [113. Path Sum II](https://leetcode.com/problems/path-sum-ii/)
 
-#### [437. Path Sum III](https://leetcode.com/problems/path-sum-iii/)
+```text
+class Solution {
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
+        List<List<Integer>> allPaths = new ArrayList<>();
+        List<Integer> currentPath = new ArrayList<Integer>();
+        helper(root, sum, currentPath, allPaths);
+        return allPaths;
+        
+    }
+  private static void helper(TreeNode currentNode, int sum, List<Integer> currentPath,
+      List<List<Integer>> allPaths) {
+    if (currentNode == null)
+      return;
+
+    // add the current node to the path
+    currentPath.add(currentNode.val);
+
+    // if the current node is a leaf and its value is equal to sum, save the current path
+    if (currentNode.val == sum && currentNode.left == null && currentNode.right == null) {
+      allPaths.add(new ArrayList<Integer>(currentPath));
+    } else {
+      // traverse the left sub-tree
+     helper(currentNode.left, sum - currentNode.val, currentPath, allPaths);
+      // traverse the right sub-tree
+      helper(currentNode.right, sum - currentNode.val, currentPath, allPaths);
+    }
+
+    // remove the current node from the path to backtrack, 
+    // we need to remove the current node while we are going up the recursive call stack.
+    currentPath.remove(currentPath.size() - 1);
+  }
+}
+```
+
+* _Time Complexity:_ O\(N^2\),where ‘N’ is the total number of nodes in the tree. This is due to the fact that we traverse each node once \(which will take O\(N\)\), and for every leaf node, we might have to store its path \(by making a copy of the current path\) which will take O\(N\). The tighter time complexity is O\(NLOGN\). From a balanced binary tree, The depth is O\(log N\) so 
+* _Space Complexity:If we ignore the space required for the allPaths list, the space complexity of the above algorithm will be O\(N\) in the worst case. This space will be used to store the recursion stack. The worst-case will happen when the given tree is a linked list \(i.e., every node has only one child\). If we do not ignore allPaths list, The space complexity is O\(NlogN\)_
+* \_\_
+
+#### [437. Path Sum III](https://leetcode.com/problems/path-sum-iii/)  
 
 #### [666. Path Sum IV](https://leetcode.com/problems/path-sum-iv/)
 
