@@ -342,13 +342,9 @@ Time complexity: O\(N\), Space Complexity: O\(N\)
 
 #### [437. Path Sum III](https://leetcode.com/problems/path-sum-iii/)  
 
-#### [666. Path Sum IV](https://leetcode.com/problems/path-sum-iv/)
+#### [543：Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
 
 #### [129. Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)
-
-#### 
-
-#### [543：Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
 
 #### [687. Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/)
 
