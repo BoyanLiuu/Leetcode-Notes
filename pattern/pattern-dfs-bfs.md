@@ -407,6 +407,8 @@ class Solution {
 
 #### [124. Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 
+* The only difference will be to ignore the paths with negative sums. Since we need to find the overall maximum sum, we should ignore any path which has an overall negative sum.
+
 ## Code snippets:
 
 * How to traverse 4 direction in an array
@@ -436,4 +438,5 @@ for(int[] d : directions){
 * 112
 * 437
 * 543
+* 124
 
