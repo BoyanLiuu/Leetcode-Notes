@@ -354,7 +354,50 @@ Time complexity: O\(N\), Space Complexity: O\(N\)
   * We will traverse all paths and will not stop processing after finding the first path.
   * Remove the current node from the current path before returning from the function. This is needed to Backtrack while we are going up the recursive call stack to process other paths.
 
+```text
+
+class Solution {
+    public int pathSum(TreeNode root, int sum) {
+        int cur_sum = 0;
+        List<Integer> currentPath = new LinkedList<>();
+        return helper(root, sum,currentPath);
+        
+    }
+ private int helper(TreeNode currentNode, int S, List<Integer> currentPath) {
+    if (currentNode == null)
+      return 0;
+
+    // add the current node to the path
+    currentPath.add(currentNode.val);
+    int pathCount = 0, pathSum = 0;
+    // find the sums of all sub-paths in the current path list, traverse backward
+    ListIterator<Integer> pathIterator = currentPath.listIterator(currentPath.size());
+    while (pathIterator.hasPrevious()) {
+      pathSum += pathIterator.previous();
+      // if the sum of any sub-path is equal to 'S' we increment our path count.
+      if (pathSum == S) {
+        pathCount++;
+      }
+    }
+
+    // traverse the left sub-tree
+    pathCount += helper(currentNode.left, S, currentPath);
+    // traverse the right sub-tree
+    pathCount += helper(currentNode.right, S, currentPath);
+
+    // remove the current node from the path to backtrack, 
+    // we need to remove the current node while we are going up the recursive call stack.
+    currentPath.remove(currentPath.size() - 1);
+
+    return pathCount;
+  }
+}
+```
+
 #### [543：Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
+
+* The height of the current node will be equal to the maximum of the heights of its left or right children, plus ‘1’ for the current node.
+* The tree diameter at the current node will be equal to the height of the left child plus the height of the right child plus ‘1’ for the current node: diameter = leftTreeHeight + rightTreeHeight . To find the overall tree diameter, we will use a class level variable. This variable will store the maximum diameter of all the nodes visited so far, hence, eventually, it will have the final tree diameter.
 
 #### 
 
@@ -392,4 +435,5 @@ for(int[] d : directions){
 * 199 
 * 112
 * 437
+* 543
 
