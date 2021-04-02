@@ -11,12 +11,12 @@
 
 * We will be using recursion \(or we can also use a stack for the iterative approach\) to keep track of all the previous \(parent\) nodes while traversing. This also means that the space complexity of the algorithm will be O\(H\), where ‘H’ is the maximum height of the tree
 * There are three different orders for traversing a tree using DFS
-  * Preorder Traversal: root -&gt; left-&gt;right
-  * Inorder Traversal_: left-&gt;root-&gt;right_
-  * Postorder Traversal： left-&gt;right-&gt;root
-* Space complexity and Time complexity:
-  * _Time Complexity_: we visit each node exactly once, thus the time complexity is O\(N\), where N is the number of nodes.
-  * _Space Complexity_: in the worst case, the tree is completely unbalanced, e.g. each node has only one child node, the recursion call would occur NN times \(the height of the tree\), therefore the storage to keep the call stack would be O\(N\). But in the best case \(the tree is completely balanced\), the height of the tree would be log\(N\). Therefore, the space complexity in this case would be O\(log\(N\)\).
+  * **Pre-order Traversal**: root -&gt; left-&gt;right
+  * **In-order Traversal**_: left -&gt; root -&gt; right_
+  * **Post-order Traversal：** left -&gt; right -&gt; root
+* **Space complexity and Time complexity**:
+  * _**\[ Time Complexity \]**_: we visit each node exactly once, thus the time complexity is O\(N\), where N is the number of nodes.
+  * _**\[ Space Complexity \]**_**:** in the worst case, the tree is completely unbalanced, e.g. each node has only one child node, the recursion call would occur NN times \(the height of the tree\), therefore the storage to keep the call stack would be O\(N\). But in the best case \(the tree is completely balanced\), the height of the tree would be log\(N\). Therefore, the space complexity in this case would be O\(log\(N\)\).
 * 通常是使用 Recursion DFS，    _Remember remove the current node from the path to backtrack,  we need to remove the current node while we are going up the recursive call stack._
 
 #### Preorder Traversal:
@@ -181,6 +181,8 @@ _The good thing about depth first search is that it uses recursion for processin
 
 #### [112. Path Sum](https://leetcode.com/problems/path-sum/)
 
+* DFS题型 基本模板
+
 #### [104: Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 
 #### 
@@ -303,7 +305,7 @@ class Solution {
 
 \_\_
 
-#### Sum of Path Numbers:
+#### [129. Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)
 
 **Question:** Given a binary tree where each node can only have a digit \(0-9\) value, each root-to-leaf path will represent a number. Find the total sum of all the numbers represented by all paths.
 
@@ -340,19 +342,72 @@ Time complexity: O\(N\), Space Complexity: O\(N\)
 
 **Question:** Given a binary tree and a number sequence, find if the sequence is present as a root-to-leaf path in the given tree. ![](../.gitbook/assets/image%20%2826%29.png) 
 
+#### 
+
 #### [437. Path Sum III](https://leetcode.com/problems/path-sum-iii/)  
+
+* There will be four differences than the  112 
+  * We will keep track of the current path in a list which will be passed to every recursive call.
+  * Whenever we traverse a node we will do two things:
+    * Add the current node to the current path.
+    * As we added a new node to the current path, we should find the sums of all sub-paths ending at the current node. If the sum of any sub-path is equal to ‘S’ we will increment our path count.
+  * We will traverse all paths and will not stop processing after finding the first path.
+  * Remove the current node from the current path before returning from the function. This is needed to Backtrack while we are going up the recursive call stack to process other paths.
+
+```text
+
+class Solution {
+    public int pathSum(TreeNode root, int sum) {
+        int cur_sum = 0;
+        List<Integer> currentPath = new LinkedList<>();
+        return helper(root, sum,currentPath);
+        
+    }
+ private int helper(TreeNode currentNode, int S, List<Integer> currentPath) {
+    if (currentNode == null)
+      return 0;
+
+    // add the current node to the path
+    currentPath.add(currentNode.val);
+    int pathCount = 0, pathSum = 0;
+    // find the sums of all sub-paths in the current path list, traverse backward
+    ListIterator<Integer> pathIterator = currentPath.listIterator(currentPath.size());
+    while (pathIterator.hasPrevious()) {
+      pathSum += pathIterator.previous();
+      // if the sum of any sub-path is equal to 'S' we increment our path count.
+      if (pathSum == S) {
+        pathCount++;
+      }
+    }
+
+    // traverse the left sub-tree
+    pathCount += helper(currentNode.left, S, currentPath);
+    // traverse the right sub-tree
+    pathCount += helper(currentNode.right, S, currentPath);
+
+    // remove the current node from the path to backtrack, 
+    // we need to remove the current node while we are going up the recursive call stack.
+    currentPath.remove(currentPath.size() - 1);
+
+    return pathCount;
+  }
+}
+```
 
 #### [543：Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
 
-#### [129. Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)
+* The height of the current node will be equal to the maximum of the heights of its left or right children, plus ‘1’ for the current node.
+* The tree diameter at the current node will be equal to the height of the left child plus the height of the right child plus ‘1’ for the current node: diameter = leftTreeHeight + rightTreeHeight . To find the overall tree diameter, we will use a class level variable. This variable will store the maximum diameter of all the nodes visited so far, hence, eventually, it will have the final tree diameter.
 
-#### [687. Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/)
+#### 
 
 
 
 ### Hard:
 
 #### [124. Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+
+* The only difference will be to ignore the paths with negative sums. Since we need to find the overall maximum sum, we should ignore any path which has an overall negative sum.
 
 ## Code snippets:
 
@@ -381,4 +436,7 @@ for(int[] d : directions){
 
 * 199 
 * 112
+* 437
+* 543
+* 124
 
