@@ -26,7 +26,7 @@
     * [2. Recursion](pattern/pattern-greedy/pattern-recursion.md)
   * [Untitled](pattern/untitled.md)
 * [Data Structure](data-structure/README.md)
-  * [Array](data-structure/array.md)
+  * [Array/ArrayList](data-structure/array.md)
   * [Strings](data-structure/strings.md)
   * [Trees](data-structure/trees.md)
   * [Map](data-structure/map.md)
