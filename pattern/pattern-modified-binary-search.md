@@ -15,7 +15,7 @@ whenever we are given a _sorted Array_ or _LinkedList_ or _Matrix_, and we are a
 
 ### [704. Binary Search](https://leetcode.com/problems/binary-search/)
 
-* _基础模板_
+* _**基础模板**_
 
 ```text
     public int search(int[] nums, int target) {
@@ -45,9 +45,36 @@ whenever we are given a _sorted Array_ or _LinkedList_ or _Matrix_, and we are a
 
 **Answer:**
 
+* _**基础模板变种， return left**_ 
+* \*\*\*\*[744. Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/)
+
+Since we are always adjusting our range to find the ‘key’, when we exit the loop, the start of our range will point to the smallest number greater than the ‘key’ as shown in the above picture.
+
+```text
+  public static int searchCeilingOfANumber(int[] arr, int key) {
+    if (key > arr[arr.length - 1]) // if the 'key' is bigger than the biggest element
+      return -1;
+
+    int start = 0, end = arr.length - 1;
+    while (start <= end) {
+      int mid = start + (end - start) / 2;
+      if (key < arr[mid]) {
+        end = mid - 1;
+      } else if (key > arr[mid]) {
+        start = mid + 1;
+      } else { // found the key
+        return mid;
+      }
+    }
+    // since the loop is running until 'start <= end', so at the end of the while loop, 'start == end+1'
+    // we are not able to find the element in the given array, so the next big number will be arr[start]
+    return start;
+  }
+```
+
 \*\*\*\*
 
-### [744. Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/)
+### 
 
 ### 
 
