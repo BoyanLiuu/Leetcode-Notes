@@ -82,6 +82,57 @@ Since we are always adjusting our range to find the ‘key’, when we exit the 
 
 ### [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
+* 有两种方法 第一种是使用binary search 找到mid 然后 找left 和 right
+* 另外一种是只使用 **binary search：变种题型 细微差别**
+  * When trying to find the first position of the ‘key’, we can update end = middle - 1 to see if the key is present before middle.
+  * When trying to find the last position of the ‘key’, we can update start = middle + 1 to see if the key is present after middle.
+
+```text
+
+public int[] searchRange(int[] nums, int target) {
+    int[] result = new int[2];
+    result[0] = findFirst(nums, target);
+    result[1] = findLast(nums, target);
+    return result;
+}
+
+private int findFirst(int[] nums, int target){
+    int idx = -1;
+    int start = 0;
+    int end = nums.length - 1;
+    while(start <= end){
+        int mid = start + (end - start)/2;
+        if(nums[mid] == target) idx = mid;
+        if(nums[mid] >= target){
+            end = mid - 1;
+        }else{
+            start = mid + 1;
+        }
+        
+    }
+    return idx;
+}
+
+private int findLast(int[] nums, int target){
+    int idx = -1;
+    int start = 0;
+    int end = nums.length - 1;
+    while(start <= end){
+        int mid = start + (end - start)/2;
+        if(nums[mid] == target) idx = mid;
+        if(nums[mid] <= target){
+            start = mid + 1;
+        }else{
+            end = mid - 1;
+        }
+   
+    }
+    return idx;
+}
+```
+
+
+
 ### Search in a Sorted Infinite Array
 
 ### Minimum Difference Element
