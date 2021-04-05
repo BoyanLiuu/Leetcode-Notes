@@ -185,5 +185,7 @@ private int findLast(int[] nums, int target){
 
 ## The problem I struggle with:
 
+* 34
+* 
 
 
