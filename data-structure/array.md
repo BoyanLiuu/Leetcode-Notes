@@ -1,4 +1,4 @@
-# Array
+# Array/ArrayList
 
 ## Basic:
 
@@ -61,6 +61,16 @@ de_que.poll（） //remove head and return null if the queue is empty
 // loop dequeu
 for(Integer cur: de_que){
 }
+```
+
+## ArrayList Iterator:
+
+```text
+ ListIterator<Integer> pathIterator = currentPath.listIterator(currentPath.size());
+    //traverse backward
+    while (pathIterator.hasPrevious()) {
+      pathSum += pathIterator.previous();
+    }
 ```
 
 ## Useful Code snippet:

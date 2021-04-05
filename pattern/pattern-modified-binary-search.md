@@ -2,15 +2,50 @@
 
 ## Summary:
 
+whenever we are given a _sorted Array_ or _LinkedList_ or _Matrix_, and we are asked to find a certain element, the best algorithm we can use is the Binary Search.
+
+* Use \(low + high\) &gt;&gt;&gt;1 avoid integer overflow, or use low + \(high-low\)/2
+* When to use low &lt;=high and low &lt; high 
+  * We use while \(low &lt;= hi\) if we are returning the match from inside the loop. The searching should be terminated only when the array is empty. At each step, our searching array is \[low, high\], when low = high, the array still contains 1 element and we need to check it.
+  * We use while \(low &lt; hi\) when we want to exit the loop first and then use the result of lo or hi to return the match.
+
 
 
 ## EASY:
 
 ### [704. Binary Search](https://leetcode.com/problems/binary-search/)
 
-* 基础模板
+* _基础模板_
 
-### Ceiling of a Number
+```text
+    public int search(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length - 1;
+        
+        while(low <= high){
+            int mid =  low + ((high-low) /2);
+            if (nums[mid] == target) return mid;
+            
+            if(target > nums[mid])  low = mid +1;  
+            else{
+                high =mid -1;  
+              
+            } 
+        }
+        return -1;
+        
+    }
+```
+
+### `Ceiling of a Number`
+
+**Question**: Given an array of numbers sorted in an ascending order, find the ceiling of a given number ‘key’. The ceiling of the ‘key’ will be the smallest element in the given array greater than or equal to the ‘key’
+
+![](../.gitbook/assets/image%20%2828%29.png)
+
+**Answer:**
+
+\*\*\*\*
 
 ### [744. Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/)
 
