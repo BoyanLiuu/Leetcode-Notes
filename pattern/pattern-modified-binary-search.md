@@ -83,7 +83,7 @@ Since we are always adjusting our range to find the ‘key’, when we exit the 
 ### [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
 * 有两种方法 第一种是使用binary search 找到mid 然后 找left 和 right
-* 另外一种是只使用 **binary search：变种题型 细微差别**
+* 另外一种是只使用 **binary search：**_**变种题型 细微差别**_
   * When trying to find the first position of the ‘key’, we can update end = middle - 1 to see if the key is present before middle.
   * When trying to find the last position of the ‘key’, we can update start = middle + 1 to see if the key is present after middle.
 
@@ -134,6 +134,18 @@ private int findLast(int[] nums, int target){
 
 
 ### Search in a Sorted Infinite Array
+
+**Question:** Given an infinite sorted array \(or an array with unknown size\), find if a given number ‘key’ is present in the array. Write a function to return the index of the ‘key’ if it is present in the array, otherwise return -1.Since it is not possible to define an array with infinite \(unknown\) size, you will be provided with an interface ArrayReader to read elements of the array. ArrayReader.get\(index\) will return the number at index; if the array’s size is smaller than the index, it will return Integer.MAX\_VALUE
+
+Answer: 
+
+![](../.gitbook/assets/image%20%2829%29.png)
+
+* _**基础模板变种题型**_
+* The only issue with applying binary search in this problem is that we don’t know the bounds of the array. To handle this situation, we will first find the proper bounds of the array where we can perform a binary search
+* An efficient way to find the proper bounds is to start at the beginning of the array with the bound’s size as ‘1’ and exponentially increase the bound’s size \(i.e., double it\) until we find the bounds that can have the key.
+
+
 
 ### Minimum Difference Element
 
@@ -186,6 +198,7 @@ private int findLast(int[] nums, int target){
 ## The problem I struggle with:
 
 * 34
-* 
+* Search in a Sorted Infinite Array
+
 
 
