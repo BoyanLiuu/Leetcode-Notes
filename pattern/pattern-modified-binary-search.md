@@ -197,7 +197,47 @@ Answer:
 
 ### [33 Search in Rotated Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
-### Rotation Count
+* If arr\[start\] &lt;= arr\[middle\], the numbers from start to middle are sorted in ascending order.
+* Else, the numbers from middle+1 to end are sorted in ascending order.
+* By comparing the ‘key’ with the numbers at index start and middle we can easily find out if the ‘key’ lies between indices start and middle; if it does, we can skip the second part =&gt; end = middle -1.
+* Else, we can skip the first part =&gt; start = middle + 1.
+
+![](../.gitbook/assets/image%20%2831%29.png)
+
+### Rotation Count:
+
+![](../.gitbook/assets/image%20%2830%29.png)
+
+* After calculating the middle
+  * If arr\[middle\] &gt; arr\[middle + 1\], then the element at middle + 1 is the smallest.
+  * If arr\[middle - 1\] &gt; arr\[middle\], then the element at middle is the smallest.
+*  Comparing the numbers at indices start and middle will give us two options:
+  * If arr\[start\] &lt; arr\[middle\], the numbers from start to middle are sorted.
+  * Else, the numbers from middle + 1 to end are sorted.
+* \[10,5,3\]   we can see mid &lt; end && arr\[mid\] &gt; arr\[mid + 1\]
+* \[10,-1,2\] we find out mid &gt; start && arr\[mid - 1\] &gt; arr\[mid\]
+
+```text
+  public static int countRotations(int[] arr) {
+    int start = 0, end = arr.length - 1;
+    while (start < end) {
+      int mid = start + (end - start) / 2;
+
+      if (mid < end && arr[mid] > arr[mid + 1]) // if mid is greater than the next element
+        return mid + 1;
+      if (mid > start && arr[mid - 1] > arr[mid]) // if mid is smaller than the previous element
+        return mid;
+
+      if (arr[start] < arr[mid]) { // left side is sorted, so the pivot is on right side
+        start = mid + 1;
+      } else { // right side is sorted, so the pivot is on the left side     
+        end = mid - 1;
+      }
+    }
+
+    return 0; // the array has not been rotated
+  }
+```
 
 额外从 这个 tag 里找的的题目
 
@@ -241,6 +281,8 @@ Answer:
 * Search in a Sorted Infinite Array
 * 162
 * Search Bitonic Array
+* 33 very close to figure out the answer
+* Rotation Count
 
 
 
