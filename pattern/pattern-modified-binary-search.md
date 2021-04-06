@@ -16,6 +16,7 @@ whenever we are given a _sorted Array_ or _LinkedList_ or _Matrix_, and we are a
 ### [704. Binary Search](https://leetcode.com/problems/binary-search/)
 
 * _**基础模板**_
+  * _**Minimum Difference Element**_
 
 ```text
     public int search(int[] nums, int target) {
@@ -147,13 +148,52 @@ Answer:
 
 
 
-### Minimum Difference Element
+### 
 
 ### [162. Find Peak Element](https://leetcode.com/problems/find-peak-element/)
 
-### Bitonic Array Maximum
+* Bitonic Array Maximum
+* _**基础模板变种题型**_
+* If arr\[middle\] &gt; arr\[middle + 1\], we are in the second \(descending\) part of the bitonic array. Therefore, our required number could either be pointed out by middle or will be before middle. This means we will be doing: end = middle.
+* If arr\[middle\] &lt; arr\[middle + 1\], we are in the first \(ascending\) part of the bitonic array. Therefore, the required number will be after middle. This means we will be doing: start = middle + 1.
+* We can break when start == end. Due to the two points mentioned above, both start and end will be pointing at the maximum number of the bitonic array.
 
-### Search Bitonic Array
+### Search element in bitonic array:
+
+* First, we can find the index of the maximum value of the bitonic array, similar to Bitonic Array Maximum. Let’s call the index of the maximum number maxIndex
+* Now, we can break the array into two sub-arrays
+
+  * Array from index ‘0’ to maxIndex, sorted in ascending order.
+  * Array from index maxIndex+1 to array\_length-1, sorted in descending order.
+
+  We can then call Binary Search separately in these two arrays to search the ‘key’
+
+```text
+  //binary search for both ascending or descending
+  private static int binarySearch(int[] arr, int key, int start, int end) {
+    while (start <= end) {
+      int mid = start + (end - start) / 2;
+
+      if (key == arr[mid])
+        return mid;
+
+      if (arr[start] < arr[end]) { // ascending order
+        if (key < arr[mid]) {
+          end = mid - 1;
+        } else { // key > arr[mid]
+          start = mid + 1;
+        }
+      } else { // descending order        
+        if (key > arr[mid]) {
+          end = mid - 1;
+        } else { // key < arr[mid]
+          start = mid + 1;
+        }
+      }
+    }
+    return -1; // element is not found
+  }
+```
 
 ### [33 Search in Rotated Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
@@ -199,6 +239,8 @@ Answer:
 
 * 34
 * Search in a Sorted Infinite Array
+* 162
+* Search Bitonic Array
 
 
 
