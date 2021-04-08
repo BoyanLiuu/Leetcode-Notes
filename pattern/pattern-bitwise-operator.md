@@ -9,6 +9,16 @@ int rightmostSetBit =1;
 rightmostSetBit = rightmostSetBit << 1;
 ```
 
+* How to get all the bit for an base -10 integer
+
+```text
+        int temp =1;
+        while( N  > 0){
+            System.out.println(N & temp);
+            N = N >>1;
+        }
+```
+
 * XOR: 
 
   * It is true if one and only one input bit is true
@@ -17,7 +27,11 @@ rightmostSetBit = rightmostSetBit << 1;
 
   * It is Associative &  Commutative ![](../.gitbook/assets/image%20%2832%29.png) 
 
-* * 
+* OR:    A \| B
+* NOT: flips the input bit   ~ 0 = 1;
+* 
+
+
 
 
 
@@ -54,9 +68,31 @@ rightmostSetBit = rightmostSetBit << 1;
 
 ### [1009. Complement of Base 10 Integer](https://leetcode.com/problems/complement-of-base-10-integer/)
 
-### 
+* number ^ complement = all\_bits\_set
+* number ^ number ^ complement = number ^ all\_bits\_set
+* 0 ^ complement = number ^ all\_bits\_set  ====&gt; complement = number ^ all\_bits\_set
+* So How do we get all bit set..
+  * for example, number is 5 which is  0101  , all bits set  is 1111, 
+  * We get 1111 from 2 ^3 -1 which is 7
 
-### 
+```text
+    public int bitwiseComplement(int N) {
+        if(N==0){
+            return 1;
+        }
+    // count number of total bits in 'num'
+    int bitCount = 0;
+    int n =N;
+    while (n > 0) {
+      bitCount++;
+      n = n >> 1;
+    }
+
+    int all_bits_set = (int) Math.pow(2, bitCount) - 1;
+    // from the solution description: complement = number ^ all_bits_set
+    return N ^ all_bits_set;
+    }
+```
 
 额外的题目
 
@@ -120,7 +156,8 @@ rightmostSetBit = rightmostSetBit << 1;
 ## The problem I  struggle with:
 
 * 137. Single Number II
-* * 
+* 1009. Complement of Base 10 Integer
+* 
 
 
 
