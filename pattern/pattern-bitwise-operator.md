@@ -4,7 +4,7 @@
 
 * _**Use Bit manipulation to avoid Integer overflow**_
 * How to move bit:
-  * &lt;&lt;   double it,  &gt;&gt; divide it
+  * &lt;&lt;   double it \(\*2\),  &gt;&gt; divide it \(/2\)
 
 ```text
 int rightmostSetBit =1;
@@ -150,7 +150,10 @@ rightmostSetBit = rightmostSetBit << 1;
 
 * Problem Challenge
 * Main idea: Flip + invert happens in the same run
-  * Flip: We can flip the image in place by replacing ith element from left with the ith element from the right.
+  * Flip: We can flip the image in place by replacing $$ith$$ element from left with the$$ith$$
+
+     element from the right.
+
   * Invert: We can take XOR of each element with 1. If it is 1 then it will become 0 and if it is 0 then it will become 1.
 
 
