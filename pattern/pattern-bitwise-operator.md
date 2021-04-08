@@ -75,6 +75,8 @@ rightmostSetBit = rightmostSetBit << 1;
 
 ### [1009. Complement of Base 10 Integer](https://leetcode.com/problems/complement-of-base-10-integer/)
 
+* Space Complexity: O\(1\)
+* Time Complexity: O\(N\)
 * number ^ complement = all\_bits\_set
 * number ^ number ^ complement = number ^ all\_bits\_set
 * 0 ^ complement = number ^ all\_bits\_set  ====&gt; complement = number ^ all\_bits\_set
@@ -115,6 +117,8 @@ rightmostSetBit = rightmostSetBit << 1;
 
 ### [260. Single Number III](https://leetcode.com/problems/single-number-iii/)
 
+* Space Complexity: O\(1\)
+* Time Complexity: O\(N\)
 * As we know that num1 and num2 are two different numbers, therefore, they should have at least one bit different between them. If a bit in n1xn2 is ‘1’, this means that num1 and num2 have different bits in that place, as we know that we can get ‘1’ only when we do XOR of two different bits, i.e.,
 * We can take any bit which is ‘1’ in n1xn2 and partition all numbers in the given array into two groups based on that bit. One group will have all those numbers with that bit set to ‘0’ and the other with the bit set to ‘1’. This will ensure that num1 will be in one group and num2 will be in the other
 
@@ -141,6 +145,15 @@ rightmostSetBit = rightmostSetBit << 1;
         return new int[] { num1, num2 };
     }
 ```
+
+### [832. Flipping an Image](https://leetcode.com/problems/flipping-an-image/)
+
+* Problem Challenge
+* Main idea: Flip + invert happens in the same run
+  * Flip: We can flip the image in place by replacing ith element from left with the ith element from the right.
+  * Invert: We can take XOR of each element with 1. If it is 1 then it will become 0 and if it is 0 then it will become 1.
+
+
 
 额外的题目:
 
