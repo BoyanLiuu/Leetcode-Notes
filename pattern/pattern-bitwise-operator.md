@@ -2,7 +2,9 @@
 
 ## Summary:
 
+* _**Use Bit manipulation to avoid Integer overflow**_
 * How to move bit:
+  * &lt;&lt;   double it,  &gt;&gt; divide it
 
 ```text
 int rightmostSetBit =1;
@@ -19,6 +21,8 @@ rightmostSetBit = rightmostSetBit << 1;
         }
 ```
 
+* How to convert base-10 number into bits string
+  * `Integer.toBinaryString`
 * XOR: 
 
   * It is true if one and only one input bit is true
@@ -29,7 +33,10 @@ rightmostSetBit = rightmostSetBit << 1;
 
 * OR:    A \| B
 * NOT: flips the input bit   ~ 0 = 1;
-* 
+  * a ^\(~a\)    =1
+  * ~0 :  0000   ===&gt; 1111, all ones
+  * 
+
 
 
 
