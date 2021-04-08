@@ -1,4 +1,4 @@
-# 16. Classic Sort
+# 17. Classic Sort
 
 ## Some basic Code Snippets:
 

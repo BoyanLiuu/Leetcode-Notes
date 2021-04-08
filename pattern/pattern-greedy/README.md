@@ -1,4 +1,4 @@
-# 17. Greedy
+# 18. Greedy
 
 ## Summary:
 
