@@ -1,2 +1,2 @@
-# Class Design Question
+# Object Oriented Design:
 

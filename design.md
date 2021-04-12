@@ -1,4 +1,4 @@
-# OOD
+# System Design Problems
 
 ## Medium:
 
