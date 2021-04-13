@@ -27,6 +27,7 @@
     * [Quick Sort](pattern/pattern-sort/quick-sort.md)
     * [Heap Sort](pattern/pattern-sort/heap-sort.md)
     * [Merge Sort](pattern/pattern-sort/merge-sort.md)
+  * [Searching](pattern/searching.md)
   * [18.Greedy](pattern/18.greedy.md)
   * [19. Divide and Conquer](pattern/19.-divide-and-conquer.md)
   * [Some Famous Algoritm](pattern/untitled.md)
