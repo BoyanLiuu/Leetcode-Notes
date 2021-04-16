@@ -25,6 +25,27 @@ https://leetcode.com/problems/sort-an-array/discuss/492042/7-Sorting-Algorithms-
 
 ### Bubble Sort:
 
+* Time Complexity:  O\(N^2\)---&gt; Average and worst case  , Best case: O\(N\)
+* Space Complexity: O\(1\):
+* We start at the beginning of the array and swap the first two elements if the first is greater than the second, Then we go to the next pair, and so on
+
+```text
+  public static int[] bubbleSort(int[] array) {
+    for(int i =0; i < array.length; i++){
+			for(int j  =i+1; j < array.length;j++){
+				if(array[j] <array[i]){
+					int temp = array[i];
+					array[i] =array[j];
+					array[j] =temp;
+				}
+				
+			}
+			
+		}
+    return array;
+  }
+```
+
 ### Insertion Sort:
 
 ### Selection Sort:
