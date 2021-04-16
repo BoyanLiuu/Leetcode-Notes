@@ -118,6 +118,56 @@ public static int[] insertionSort(int[] array) {
 
 * _Time Complexity:_  O\(Nlog\(N\)\)---&gt; Average and Best case  ,  Worst Case: O\(N^2\)
 * _Space Complexity:_ O\(n\):
+* We pick a random element  and partition the array, such that all numbers that are less than the partitioning element come before all elements that are greater than it. The partitioning can be performed efficiently through a series of swaps.
+* Since the partitioned element is not guaranteed to be the median , our sorting could be  very slow. This is the reason for the O\(N^2\) worst case runtime
+
+```text
+import java.util.*;
+
+class Program {
+  public static int[] quickSort(int[] array) {
+    quickSort(array,0,array.length -1);
+    return array;
+  }
+	
+	public static void quickSort(int[] array, int startIdx, int endIdx){
+		if(startIdx >= endIdx)
+			return ;
+		
+		int pivotIdx =  startIdx;
+		int leftIdx = startIdx + 1;
+		int rightIdx = endIdx;
+		
+		while(rightIdx >= leftIdx){
+			if(array[leftIdx] > array[pivotIdx] && array[rightIdx] < array[pivotIdx]){
+				swap(leftIdx,rightIdx,array);
+			}
+			if(array[leftIdx] <= array[pivotIdx]) leftIdx += 1;
+			
+			if(array[rightIdx] >= array[pivotIdx]) rightIdx -= 1;
+			
+		}
+			swap(pivotIdx,rightIdx,array);
+			boolean leftSubarrayIsSmaller  = rightIdx -1 - startIdx < endIdx - (rightIdx + 1);
+			
+			if(leftSubarrayIsSmaller ){
+				  quickSort(array,startIdx,rightIdx -1 );
+				  quickSort(array,rightIdx +1,endIdx );
+			}else{
+				 quickSort(array,rightIdx +1,endIdx );
+				 quickSort(array,startIdx,rightIdx -1 );
+				
+			}
+	}
+	
+	public static void swap(int i, int j, int[] array){
+		int temp = array[j];
+		array[j] = array[i];
+		array[i] = temp;
+	}
+}
+
+```
 
 ### Heap Sort:
 
@@ -154,6 +204,7 @@ public static int[] insertionSort(int[] array) {
 ## **Problem I struggle**
 
 * **Insertion Sort**
+* **quick sort**
 
 ### 
 
