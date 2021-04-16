@@ -50,7 +50,7 @@ https://leetcode.com/problems/sort-an-array/discuss/492042/7-Sorting-Algorithms-
 
 ### Count Inversions:
 
-![](../../.gitbook/assets/image%20%2843%29.png)
+![](../.gitbook/assets/image%20%2843%29.png)
 
 **Answer:**
 
