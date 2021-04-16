@@ -9,7 +9,7 @@
 * **Source**:  Any node that has no incoming edge and has only outgoing edges is called a source
 * **Sink**:  Any node that has only incoming edges and no outgoing edge is called a sink.
 * So, we can say that a topological ordering starts with one of the sources and ends at one of the sinks.
-* A topological ordering is possible only when the graph has no directed cycles, i.e. if the graph is a Directed Acyclic Graph \(DAG\). If the graph has a cycle, some vertices will have cyclic dependencies which makes it impossible to find a linear ordering among vertices.
+* A topological ordering is possible only when the graph has no directed cycles, i.e. a Directed Acyclic Graph \(DAG\). If the graph has a cycle, some vertices will have cyclic dependencies which makes it impossible to find a linear ordering among vertices.
 * To find the topological sort of a graph we can traverse the graph in a Breadth First Search \(BFS\) way. We will start with all the sources, and in a stepwise fashion, save all sources to a sorted list. We will then remove all sources and their edges from the graph. After the removal of the edges, we will have new sources, so we will repeat the above process until all vertices are visited
 
 ![](../.gitbook/assets/image%20%2835%29.png)
@@ -21,10 +21,10 @@
 2. **Space Complexity:**
    1. O\(V+E\), Since we are storing all of the edges for each vertex in an adjacency list
 3. **Initialization**
-   1. We will store the graph in Adjacency Lists, which means each parent vertex will have a list containing all of its children. We will do this using a HashMap where the ‘key’ will be the parent vertex number and the value will be a List containing children vertices.
-   2. To find the sources, we will keep a HashMap to count the in-degrees i.e., count of incoming edges of each vertex. Any vertex with ‘0’ in-degree will be a source.
+   1. We will store the graph in Adjacency Lists, which means each parent vertex will have a list containing all of its children. We will do this using a `HashMap` where the ‘key’ will be the parent vertex number and the value will be a List containing children vertices.
+   2. To find the sources, we will keep a `HashMap` to count the in-degrees i.e., count of incoming edges of each vertex. Any vertex with ‘0’ in-degree will be a source.
 4. **Build the graph and find in-degrees of all vertices**
-   1. We will build the graph from the input and populate the in-degrees HashMap.
+   1. We will build the graph from the input and populate the in-degrees `HashMap`.
 5.  **Find all sources**
    1. All vertices with ‘0’ in-degrees will be our sources and we will store them in a Queue.
 6. **Sort:**
