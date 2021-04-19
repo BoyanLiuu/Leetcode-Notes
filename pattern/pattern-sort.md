@@ -173,6 +173,87 @@ class Program {
 
 * _Time Complexity:_  O\(Nlog\(N\)\)---&gt; Average and Best case  ,  Worst Case: O\(N^2\)
 * _Space Complexity:_ O\(n\):
+* Heap information:
+  * currentNode --&gt; i ,  childOne --&gt; 2i +1, child Two ---&gt; 2i +2;
+  * parent Node --&gt; floor\(\(i -1\)/2\) 
+  * Build heap method: turn an array to array representation of Heap
+  * Sift Up method:  Once we add to the array we need to sift up to add to correct location
+    * It continuously swap the current node with parent node until  it at correct location
+    * This is a min heap
+
+
+
+![](../.gitbook/assets/image%20%2846%29.png)
+
+* Sift Down method:
+  * swap with child element
+  * We choose a smallest child node and swap with it
+  * Here is implementation for min Heap:
+
+![](../.gitbook/assets/image%20%2845%29.png)
+
+* Remove: 
+  * Swap root value with final value of the array
+  * Sift  down to rebuild the heap
+* Algorithm:
+  * Transform entire array into max heap, we do not create extra place to store as heap
+  * Take the head number and swap at final value of the unsorted array
+  * Then we rebuild max heap 
+
+```text
+import java.util.*;
+
+class Program {
+  public static int[] heapSort(int[] array) {
+		buildMaxHeap(array);
+		//swap last index in the heap with the root value and rebuild the heap
+    for(int endIdx =  array.length -1; endIdx > 0; endIdx--){
+			swap(0,endIdx,array);
+			//array is smaller,
+			siftDown(0,endIdx -1, array);
+			
+		}
+    return array;
+  }
+	
+	
+	public static void siftDown(int currentIdx, int endIdx, int[] heap){
+		int childOneIdx = currentIdx * 2 +1;
+		while(childOneIdx <= endIdx){
+			int childTwoIdx =  currentIdx * 2 +2 <= endIdx ? currentIdx * 2 + 2 : -1;
+			int idxToSwap;
+			if(childTwoIdx != -1 && heap[childTwoIdx] > heap[childOneIdx]){
+				idxToSwap = childTwoIdx;
+			}else{
+				idxToSwap = childOneIdx;
+			}
+			
+			if(heap[idxToSwap] > heap[currentIdx]){
+				swap(currentIdx, idxToSwap,heap);
+				currentIdx = idxToSwap;
+				childOneIdx = currentIdx * 2 +1;
+			}else{
+				return;
+			}
+		}
+	}
+	public static void  buildMaxHeap(int [] array){
+		int firstParentIdx = (array.length - 2) /2;
+		
+		for(int currentIdx = firstParentIdx; currentIdx >= 0; currentIdx --){
+			siftDown(currentIdx,array.length -1, array);
+			
+		}
+		
+	}
+	public static void swap(int i, int j, int[] array){
+		int temp =  array[j];
+		array[j] = array[i];
+		array[i] = temp;
+	}
+}
+
+```
 
 ### Radix Sort:
 
@@ -205,6 +286,7 @@ class Program {
 
 * **Insertion Sort**
 * **quick sort**
+* **Heap Sort:**
 
 ### 
 
