@@ -183,7 +183,7 @@ class Program {
 
 
 
-![](../.gitbook/assets/image%20%2846%29.png)
+![](../.gitbook/assets/image%20%2848%29.png)
 
 * Sift Down method:
   * swap with child element
@@ -257,10 +257,36 @@ class Program {
 
 ### Radix Sort:
 
+* Time  Complexity: O\(d\*\(n+b\)\)  , n is the number of elements and b is base for representing numbers.
+* It is a sorting algorithm for integers that takes advantage of the fact that integers have a finite number of bits, In radix sort, we iterate through each digit of the number, grouping numbers by each digit,
+*  For example, If we have an array of integers, we might first sort by the first digit, so that the Os are grouped together. Then we sort each of these groupings by the next digit. We repeat this process sorting by each subsequent digit, until finally the whole array is sorted.
+* Algorithm:
+
+  * Another is current sorted array
+  * One is counts array:
+    * We first put the count of digit at each location, , When we put the element to the sorted array based on counts index, we first minus one and that is the target index we need to put.
+
+![](../.gitbook/assets/image%20%2847%29.png)
+
+
+
+Then we need to add  i -1  to i and update it value:
+
+![](../.gitbook/assets/image%20%2846%29.png)
+
+
+
+
+
+
+
 
 
 ### Merge Sort:
 
+* Time Complexity: O\(NlogN\) average and worst case,
+* Space Complexity:
+* It divides the array in half , sorts each of those halves, and then merges them back together. Each of those halves has the same sorting algorithm applied to it. Eventually, you are merging just two single element arrays. It is the merge part that does all that heavy lifting
 * Top down Merge Sort:
 * Bottom Up Merge Sort
 
