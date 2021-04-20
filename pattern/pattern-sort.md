@@ -278,11 +278,52 @@ Then we need to add  i -1  to i and update it value:
 
 ### Merge Sort:
 
-* Time Complexity: O\(NlogN\) average and worst case,
+* Time Complexity: O\(NlogN\) average and worst case,best case,
 * Space Complexity:
 * It divides the array in half , sorts each of those halves, and then merges them back together. Each of those halves has the same sorting algorithm applied to it. Eventually, you are merging just two single element arrays. It is the merge part that does all that heavy lifting
-* Top down Merge Sort:
-* Bottom Up Merge Sort
+* Algorithm:
+
+```text
+
+class Program {
+  public static int[] mergeSort(int[] array) {
+   if(array.length <= 1)
+		 return array;
+		
+		int middleIdx = array.length /2;
+		int [] leftHalf =  Arrays.copyOfRange(array, 0 ,middleIdx);
+		int [] rightHalf =  Arrays.copyOfRange(array, middleIdx ,array.length);
+    return mergerSortedArrays(mergeSort(leftHalf),mergeSort(rightHalf));
+  }
+	
+	public static int[]  mergerSortedArrays(int[] leftHalf, int [] rightHalf){
+		int [] sortedArray = new int[leftHalf.length + rightHalf.length];
+		
+		int k = 0;
+		int i = 0;
+		int  j = 0;
+		
+		while(i < leftHalf.length && j < rightHalf.length){
+			if(leftHalf[i] <= rightHalf[j]){
+				sortedArray[k++] = leftHalf[i++];
+			}else{
+				sortedArray[k++] = rightHalf[j++];
+			}
+		}
+		
+		while(i < leftHalf.length){
+			sortedArray[k++] = leftHalf[i++];
+		}
+		while(j < rightHalf.length){
+			sortedArray[k++] = rightHalf[j++];
+		}
+		
+		return sortedArray;
+		
+	}
+}
+
+```
 
 
 
