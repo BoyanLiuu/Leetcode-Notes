@@ -276,12 +276,6 @@ Then we need to add  i -1  to i and update it value:
 
 
 
-
-
-
-
-
-
 ### Merge Sort:
 
 * Time Complexity: O\(NlogN\) average and worst case,
