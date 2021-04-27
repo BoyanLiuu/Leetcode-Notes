@@ -20,6 +20,7 @@
   * [15. Recursion](pattern/15.-recursion.md)
   * [16. Dynamic Programming](pattern/pattern-dynamic-programming.md)
   * [17. Classic Sort](pattern/pattern-sort.md)
+  * [19.Searching](pattern/19.searching.md)
   * [18.Greedy](pattern/18.greedy.md)
   * [Some Famous Algoritm](pattern/untitled.md)
 * [Data Structure](data-structure/README.md)
