@@ -64,6 +64,109 @@ It is  a special kind of Graph, in which the vertices can be divided into two di
 
 * A graph cannot be Bipartite if there are an odd number of vertices and has an odd cycle i.e., a cycle between the odd number of vertices.
 
+### Graph Traversal Algorithm:
+
+![](../.gitbook/assets/image%20%2883%29.png)
+
+#### BFS:
+
+* All the nodes at a certain level are traversed before moving on to the next level.
+* To build a graph based on BFS, start traversing from any vertex, call it currentVertex. If the adjacent vertices are yet already not visited, then print their values. Then, move on to children of the currentVertex.
+* **Using queue**
+
+```text
+    public static String bfsTraversal(Graph g, int source) {
+
+        String result = "";
+        int num_of_vertices = g.vertices;
+
+        //Boolean Array to hold the history of visited nodes (by default-false)
+        //Make a node visited whenever you enqueue it into queue
+        boolean[] visited = new boolean[num_of_vertices];
+
+        //Create Queue(Implemented in previous lesson) for Breadth First Traversal and enqueue source in it
+        Queue<Integer> queue = new Queue<>(num_of_vertices);
+
+        //add current node in to queue
+        queue.enqueue(source);
+        visited[source] = true;
+
+        //Traverse while queue is not empty
+        while (!queue.isEmpty()) {
+
+            //Dequeue a vertex/node from queue and add it to result
+            int current_node = queue.dequeue();
+
+            result += String.valueOf(current_node);
+
+            //Get adjacent vertices to the current_node from the array,
+            //and if they are not already visited then enqueue them in the Queue
+            DoublyLinkedList<Integer>.Node temp = null;
+            if(g.adjacencyList[current_node] != null)
+                temp = g.adjacencyList[current_node].headNode;
+            //loop adjacent list
+            while (temp != null) {
+
+                if (!visited[temp.data]) {
+                    queue.enqueue(temp.data);
+                    visited[temp.data] = true; //Visit the current Node
+                }
+                temp = temp.nextNode;
+            }
+        }//end of while
+        return result;
+    }
+```
+
+#### DFS:
+
+* Starting from any node, we keep moving to an adjacent node until we reach the farthest level. Then we move back to the starting point and pick another adjacent node. Once again, we probe till the farthest level and move back. This process continues until all nodes are visited.
+* **Using stack**
+* In the dfs\(\) function we start from the source vertex and then each node is pushed into the stack. Whenever a node is pushed into the stack, the nodes from its adjacency list are pushed into the stack as well. Then, it is marked visited in the visited list. Now we can understand why we need the stack because it keeps popping out the new adjacent nodes \(giving you a node at a new level\) instead of returning the previous nodes that we pushed in.
+
+```text
+    public static String dfsVisit(Graph g, int source, boolean[] visited) {
+
+        String result = "";
+
+
+        //Create Stack(Implemented in previous lesson) for Depth First Traversal and Push source in it
+        Stack<Integer> stack = new Stack<Integer>(g.vertices);
+
+        stack.push(source);
+
+        //Traverse while stack is not empty
+        while (!stack.isEmpty()) {
+
+            //Pop a vertex/node from stack and add it to the result
+            int current_node = stack.pop();
+            result += String.valueOf(current_node);
+            
+            //Get adjacent vertices to the current_node from the array,
+            //and if they are not already visited then push them in the stack
+            DoublyLinkedList<Integer>.Node temp = null;
+            if(g.adjacencyList[current_node] !=null)
+                temp = g.adjacencyList[current_node].headNode;
+
+            while (temp != null) {
+
+                if (!visited[temp.data]) {
+                    stack.push(temp.data);
+                    
+                }
+                temp = temp.nextNode;
+            }
+            //Visit the node
+            visited[current_node] = true;
+        }//end of while
+        return result;
+    }
+```
+
+
+
+
+
 
 
 ## Easy:
