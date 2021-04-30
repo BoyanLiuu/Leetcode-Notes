@@ -64,7 +64,11 @@ It is  a special kind of Graph, in which the vertices can be divided into two di
 
 * A graph cannot be Bipartite if there are an odd number of vertices and has an odd cycle i.e., a cycle between the odd number of vertices.
 
+### Graph Traversal:
+
 ### Graph Traversal Algorithm:
+
+
 
 ![](../.gitbook/assets/image%20%2883%29.png)
 
