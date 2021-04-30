@@ -296,6 +296,36 @@ class Solution {
 }
 ```
 
+### Count the number of edges in an undirected graph:
+
+* Just sum up the size of all the adjacency lists for each vertex and then divide by 2, it will give us total number o edges in the graph
+* _**Time Complexity: O\(V+E\)**_
+
+```text
+    public static int numEdges(Graph g) {
+
+        // For undirected graph, just sum up the size of
+        // all the adjacency lists for each vertex and then divide it by 2.
+        // It will give us total number of edges in the graph.
+        int sum = 0;
+
+        for (int i = 0; i < g.vertices; i++) {
+
+            DoublyLinkedList<Integer>.Node temp = null;
+            if (g.adjacencyList[i] != null)
+                temp = g.adjacencyList[i].headNode;
+
+            while (temp != null) {
+                sum++;
+                temp = temp.nextNode;
+            }
+        }
+        return sum/2;
+    }
+```
+
+## 
+
 ## Medium:
 
 ### Find Mother Vertex in a directed graph:
@@ -326,7 +356,6 @@ class Solution {
         for (int i = 0; i < g.vertices; i++) {
             if (visited[i] == false) {
                 DFS(g, i, visited);
-                System.out.println(i);
                 lastV = i;
             }
         }
@@ -373,7 +402,68 @@ class Solution {
     }
 ```
 
+### Check if a path exist between two vertices:
+
+![](../.gitbook/assets/image%20%2885%29.png)
+
+* _**Algorithm:**_ 
+  * This problem can be solved by both DFS and BFS. All we need is a simple traversal from source to see if we can reach destination. If the destination value is found, we return True.
+
+```text
+/Perfrom DFS Traversal starting from source and if you reach destination
+    //then it means that there exist a path between source and destination
+    //so return true and if you traverse the graph but can't reach destination
+    //then simply return false.
+    public static boolean checkPath(Graph g, int source, int destination) {
+        if (source == destination){
+            return true;
+        }
+
+        //Boolean Array to hold the history of visited nodes (by default-false)
+        //Make a node visited whenever you push it into stack
+        boolean[] visited = new boolean[g.vertices];
+
+        //Create Stack
+        Stack<Integer> stack = new Stack<>(g.vertices);
+
+        stack.push(source);
+        visited[source] = true;
+
+        //Traverse while stack is not empty
+        while (!stack.isEmpty()) {
+
+            //Pop a vertex/node from stack
+            int current_node = stack.pop();
+
+            //Get adjacent vertices to the current_node from the array,
+            //and if only push unvisited adjacent vertices into stack
+            //Before pushing into stack, check if it's the destination.
+            DoublyLinkedList<Integer>.Node temp = null;
+            if (g.adjacencyList[current_node] != null)
+                temp = g.adjacencyList[current_node].headNode;
+
+            while (temp != null) {
+
+                if (!visited[temp.data]) {
+
+                    if (temp.data == destination) {
+                        return true;
+                    }
+
+                    stack.push(temp.data);
+                    visited[temp.data] = true;
+
+                }
+
+                temp = temp.nextNode;
+            }
+
+        } //end of while
+        return false;
+    }
+```
+
 ## Hard:
 
-## Problem I struggle:
+## Problem I struggle: everything
 
