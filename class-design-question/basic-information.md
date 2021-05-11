@@ -87,6 +87,19 @@ Inheritance provides a way to create a new class from an existing class. The new
 
 **Note: In Java, Multiple and Hybrid inheritance are applicable using interfaces only.**
 
+\*\*\*\*
+
+\*\*\*\*
+
+### **Advantages of Inheritance:**
+
+* Re-usability
+* Avoiding Duplication of Code \#
+* Extensibility
+* Data Hiding: The base class can decide to keep some data private so that it cannot be altered by the derived class.
+
+\*\*\*\*
+
 
 
 \_\_
