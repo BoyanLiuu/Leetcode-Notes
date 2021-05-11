@@ -33,7 +33,8 @@
   * [Tries](data-structure/tries.md)
   * [Heap](data-structure/heap.md)
   * [HashTable](data-structure/map.md)
-* [Object Oriented Design:](class-design-question.md)
+* [Object Oriented Design:](class-design-question/README.md)
+  * [Basic Information](class-design-question/basic-information.md)
 * [System Design Problems](design.md)
 * [Behavior Question:](behavior-question.md)
 
