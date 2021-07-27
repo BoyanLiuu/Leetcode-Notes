@@ -8,7 +8,10 @@
   * TL;DR: 
     * If a wider scope of the window is valid, the narrower scope of the window must be valid
     * If a narrower scope of the window is invalid, the wider scope of that window must be invalid
-* When we finding no repeating character, we record its last index, When we finding K distinct characters, We record its occurrence.
+* When we finding no repeating character, we record its last index, 
+* When we finding K distinct characters, We record its occurrence.   [340](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)
+
+
 
 
 
