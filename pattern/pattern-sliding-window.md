@@ -176,6 +176,14 @@ class Solution {
 
 * Find the smallest subarray sum of length \(length - k\)
 
+### [1358. Number of Substrings Containing All Three Characters](https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/)
+
+### [1248. Count Number of Nice Subarrays](https://leetcode.com/problems/count-number-of-nice-subarrays/)
+
+### [1234. Replace the Substring for Balanced String](https://leetcode.com/problems/replace-the-substring-for-balanced-string/)
+
+### [930. Binary Subarrays With Sum](https://leetcode.com/problems/binary-subarrays-with-sum/)
+
 ## Hard:
 
 ### [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/)
@@ -278,9 +286,11 @@ class Solution {
 }
 ```
 
+### [1425. Constrained Subsequence Sum](https://leetcode.com/problems/constrained-subsequence-sum/)
 
+### [992. Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/)
 
-
+### [862. Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)
 
 ## Ivy's Marked Problems w/ Notes:
 
@@ -291,12 +301,12 @@ class Solution {
 ## Boyan's Marked Problems:
 
 * Trouble List:
-  * 3
-  * 424
-  * 487
-  * 1100
+  * 3  这次过了
+  * 424 x 2
+  * 487 这次过了
+  * 1100  x 2
   * 567
   * 30
-  * 1438
-  * 1423
+  * 1438 x 2 
+  * 1423 x 2
 
