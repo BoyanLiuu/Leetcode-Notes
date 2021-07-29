@@ -6,17 +6,19 @@
   * Types:  **`balancing values`**,  **`in-place switching`**,
     *  but **don't feel like it's limited to these functionalities**, be creative!
 * \*\*\*\*🗝 **Key Points:** ------------------------------------------------------------------
+
   * Where to place the pointers initially\(or to not place them\)?
   * Under what case should we move the pointers?
   * When and where to update the pointers?
-  * **-------------------------------------------------------------------------------**
+
+  \*\*\*\*
 
 ## Types:
 
 * **`In-place switching`:**
   * **\[Main idea\]**: use two pointers to mark the locations for data to be switched in-place
   * **Example questions:**
-    * **\#26** [Remove Duplicates \(easy\)](https://www.educative.io/courses/grokking-the-coding-interview/mEEA22L5mNA)
+    * **\#26** [Remove Duplicates \(easy\)](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
       * one pointer for marking the location to place unduplicated data
       * another for marking the index of unduplicated data 
       * switching happens when two pointers are placed correctly
