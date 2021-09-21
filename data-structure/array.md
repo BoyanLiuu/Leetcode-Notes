@@ -87,7 +87,9 @@ for(int i = 0; i < s.length(); i ++)
 * How to represent row and col in one integer
 
 ```text
-r*N + c
+int index = row*n+col;  // of n columns
+int row = index/n;
+int col = index%n;
 ```
 
 * 
