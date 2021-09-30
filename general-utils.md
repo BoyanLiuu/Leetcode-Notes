@@ -253,6 +253,13 @@ str.subString(int beginIndex, int endIndex);Returns a new string that is a subst
 str.toCharArray();// convert to char array
 str.toUpperCase()
 str.toLowerCase()
+// Generate string format
+String.format("%d->%d", n1, n2);
+
+
+// Convert number into string
+String.valueOf(n1)
+
 
 ```
 
