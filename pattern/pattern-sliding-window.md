@@ -115,6 +115,7 @@
 
 ### [3.longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
+* pwwkew
 * We can use a HashMap to remember the **last index of each character** we have processed. Whenever we get a repeating character, we will shrink our sliding window to ensure that we always have distinct characters in the sliding window
 
 ### [424. Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
@@ -301,8 +302,8 @@ class Solution {
 ## Boyan's Marked Problems:
 
 * Trouble List:
-  * 3  这次过了
-  * 424 x 2
+  * [3](https://leetcode.com/problems/longest-substring-without-repeating-characters/) 会了。
+  * [424](https://leetcode.com/problems/longest-repeating-character-replacement/) x 2
   * 487 这次过了
   * 1100  x 2
   * 567
