@@ -55,8 +55,6 @@
 
 ### [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
 
-### [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
-
 ### [344. Reverse String](https://leetcode.com/problems/reverse-string/)
 
 ### 
@@ -179,6 +177,7 @@ private int twoSumSmaller(int[] nums, int startIndex, int target) {
 
 ## Problem I struggle:
 
+* 283
 * 15
 * 1711
 * 259

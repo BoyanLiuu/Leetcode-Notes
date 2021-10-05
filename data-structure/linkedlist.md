@@ -36,6 +36,22 @@
     }
 ```
 
-* 
+* How to reverse a linked List:
+
+```text
+1-2-2-1 , 传送进来的的 是 第二个2开头
+private ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
+        }
+        return prev;
+    }
+```
+
 
 
