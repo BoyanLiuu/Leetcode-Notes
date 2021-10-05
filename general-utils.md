@@ -47,7 +47,7 @@ Integer.MAX\_VALUE:+2147483647
 
 O\(nlogk\) &lt; O\(nlogn\), k is constant , and n is infinity case.
 
-In place: It is an algorithm which transforms input using no auxiliary data structures.
+**In place**: It is an algorithm which transforms input using no auxiliary data structures.
 
 ```text
 throw new IllegalArgumentException("No such element");
