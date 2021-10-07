@@ -409,24 +409,11 @@ class Solution {
 
 * The only difference will be to ignore the paths with negative sums. Since we need to find the overall maximum sum, we should ignore any path which has an overall negative sum.
 
-## Code snippets:
 
-* How to traverse 4 direction in an array
 
-```text
-int[][] directions = { {-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-        
-for(int[] d : directions){
-    int neighborRow = row + d[0];
-    int neighborCol = col + d[1];
-    if (neighborRow >= 0 && neighborRow < rows && 
-       neighborCol >= 0 && neighborCol < cols) {
-       //do work
-       dfs(grid,neighborRow,neighborCol);
 
-}       
-}
-```
+
+
 
 
 

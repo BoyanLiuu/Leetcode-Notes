@@ -47,6 +47,23 @@ Integer.MAX\_VALUE:+2147483647
 
 O\(nlogk\) &lt; O\(nlogn\), k is constant , and n is infinity case.
 
+How to traverse 4 direction in array of array
+
+```text
+        int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        
+        for(int[] d : directions){
+            int neighborRow = row + d[0];
+            int neighborCol = col + d[1];
+        if (neighborRow >= 0 && neighborRow < rows && 
+             neighborCol >= 0 && neighborCol < cols) {
+                //do work
+                dfs(grid,neighborRow,neighborCol);
+
+        }       
+        }
+```
+
 **In place**: It is an algorithm which transforms input using no auxiliary data structures.
 
 ```text
