@@ -34,4 +34,4 @@
   * [Basic Information](class-design-question/basic-information.md)
 * [System Design Problems](design.md)
 * [Behavior Question:](behavior-question.md)
-
+* [Side Notes](side-notes.md)
