@@ -9,29 +9,29 @@ description: >-
 
 ## Problem-solving process
 
-* **Frequently criticize your understanding of the question**, always ask questions, and communicate with the interviewer to **confirm you have sufficient, accurate info** to solve the problem.  
+* **Frequently criticize your understanding of the question**, always ask questions, and communicate with the interviewer to** confirm you have sufficient, accurate info** to solve the problem.  
 * **Expand the problem and reveal the hidden messages**, like value boundaries, limitations, and many other edge cases you can think of.
-* **Start with a simple, boring, or not much efficient solution** \(but it sure does the job, covering everything you need\),
+* **Start with a simple, boring, or not much efficient solution** (but it sure does the job, covering everything you need),
   *  You can either **start coding it** if you are not confident about thinking of a better solution, 
-    * discuss what to **improve your code** and how would it be better with the interviewer, of course, the main idea is about runtime and space, talk about how you improved your big O.
+    * discuss what to **improve your code **and how would it be better with the interviewer, of course, the main idea is about runtime and space, talk about how you improved your big O.
   * Or you can talk about this simple solution briefly if you already have a clear and better solution in your head, start implementing it. Then get straight to the structure of your better solution. 
 * Always explain what are you doing when coding, too much silence is not very good. Explain why if necessary.
 * Don't scare yourself if you make mistakes, admit it and analyze why it was wrong, talk about how can you improve it! This is always a good quality they would be looking for in an employer: calm, confident, honest, and logical.
 * Try to keep your movement clean, trust me, people like that. Also, smile and be friendly.
 
-## Common Mistakes \(Duh\)
+## Common Mistakes (Duh)
 
 * Last accumulated data:
-  * Remember there can be a last accumulated data after the iteration, don't ignore it, it might be useful :\(
+  * Remember there can be a last accumulated data after the iteration, don't ignore it, it might be useful :(
 
 ## Ivy's messed up syntaxes
 
-*  **Max/Min value for Integer: `Integer.MAX_VALUE` / `Integer.MIN_VALUE`**
+* ** Max/Min value for Integer: `Integer.MAX_VALUE` / `Integer.MIN_VALUE`**
 * **Priority Queue**:  [https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html](https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html)
 
-![](.gitbook/assets/image%20%286%29.png)
+![](<.gitbook/assets/image (6).png>)
 
-![](.gitbook/assets/image%20%285%29.png)
+![](<.gitbook/assets/image (5).png>)
 
 ## ASCII Table
 
@@ -41,15 +41,15 @@ description: >-
 
 ## Useful code snippet:
 
-Integer.MIN\_VALUE:-2147483648
+Integer.MIN_VALUE:-2147483648
 
-Integer.MAX\_VALUE:+2147483647
+Integer.MAX_VALUE:+2147483647
 
-O\(nlogk\) &lt; O\(nlogn\), k is constant , and n is infinity case.
+O(nlogk) < O(nlogn), k is constant , and n is infinity case.
 
 How to traverse 4 direction in array of array
 
-```text
+```
         int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
         
         for(int[] d : directions){
@@ -66,13 +66,24 @@ How to traverse 4 direction in array of array
 
 **In place**: It is an algorithm which transforms input using no auxiliary data structures.
 
-```text
+```
 throw new IllegalArgumentException("No such element");
+```
+
+### Get all the digits:
+
+```
+int number; // = some int
+
+while (number > 0) {
+    print( number % 10);
+    number = number / 10;
+}
 ```
 
 ### Write own comparator:
 
-```text
+```
 class ElementComparator implements Comparator<Element> {
   public int compare(Element e1, Element e2) {
     if (e1.frequency != e2.frequency)
@@ -118,7 +129,7 @@ class ElementComparator implements Comparator<Element> {
 
 ### Character related stuffs:
 
-```text
+```
 65-90 A-Z  97-122 a-z
 Chr - ‘A’ → 给出离A的距离， 如果 Chr is C 那就会返还2
 Character.isDigit()
@@ -128,7 +139,7 @@ Character.toUpperCase()
 
 ### Array & ArrayList
 
-```text
+```
 //1. Change arraylist to array
 Integer[] arr = new Integer[al.size()]
 arr =  al.toArray(arr);
@@ -171,11 +182,11 @@ result.toArray(new int[result.size()][]);
 
 ### Linkedlist:
 
-![](.gitbook/assets/image%20%28101%29.png)
+![](<.gitbook/assets/image (101).png>)
 
 ### Set:
 
-```text
+```
 Set<Obj> set = new HashSet<Obj> (); 
 set.add();
 set.addAll(Collections);//collections , list
@@ -197,7 +208,7 @@ set.toArray()
 
 FILO
 
-```text
+```
 Stack<String> stackName = new Stack<>();
 Stack.push()
 stack.pop()
@@ -211,7 +222,7 @@ stack.empty() ---> it returns true if it is empty
 
 FIFO
 
-```text
+```
  Queue<Integer> q = new LinkedList<>();
  
  queue.add()
@@ -224,7 +235,7 @@ FIFO
 
  _TreeMap_ are **sorted according to their natural order**.
 
-```text
+```
 Map<String,Integer> map = new HashMap<String,Integer>();
 
         // Traversing through the map
@@ -250,7 +261,7 @@ Map<String,Integer> map = new HashMap<String,Integer>();
 
 we built heap by priorityQueue
 
-```text
+```
 public int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>((n1, n2) -> n1 - n2);
         
@@ -282,22 +293,22 @@ Map.Entry<Character, Integer> entry = pq.poll();
 
 * In-order, give us ascending order
 
-![](.gitbook/assets/image%20%2899%29.png)
+![](<.gitbook/assets/image (99).png>)
 
 * Post order: left right root.
 * Pre-order:root left right
 
-![](.gitbook/assets/image%20%28100%29.png)
+![](<.gitbook/assets/image (100).png>)
 
 
 
 ### String:
 
-String concatenation takes O\(N^2\):
+String concatenation takes O(N^2):
 
 It first create an entirely new string, allocate enough memory for everything, copying all the data from the existing value of x and the copy the data from the string be append.
 
-```text
+```
 str.charAt(int index);
 str.compareTo(strB); //Compares two strings lexicographically.
 str.compareToIgnoreCase(String strB)
@@ -320,7 +331,7 @@ String.valueOf(n1)
 
 ### StringBuilder:
 
-```text
+```
 str.append() 添加
 str.toString()  ---> return a string representing the data
 str.reverse() ---> reverse string
@@ -336,4 +347,3 @@ str.deleteCharAt(index); 
 ![](.gitbook/assets/bigo2.png)
 
 ![](.gitbook/assets/bigo3.png)
-
