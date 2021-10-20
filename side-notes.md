@@ -2,6 +2,8 @@
 
 有意思的 算法：
 
+[https://github.com/wisdompeak/LeetCode](https://github.com/wisdompeak/LeetCode)
+
 
 
 1. **Robot Bounded In Circle**
