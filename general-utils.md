@@ -9,12 +9,12 @@ description: >-
 
 ## Problem-solving process
 
-* **Frequently criticize your understanding of the question**, always ask questions, and communicate with the interviewer to** confirm you have sufficient, accurate info** to solve the problem.  
+* **Frequently criticize your understanding of the question**, always ask questions, and communicate with the interviewer to** confirm you have sufficient, accurate info** to solve the problem. &#x20;
 * **Expand the problem and reveal the hidden messages**, like value boundaries, limitations, and many other edge cases you can think of.
 * **Start with a simple, boring, or not much efficient solution** (but it sure does the job, covering everything you need),
-  *  You can either **start coding it** if you are not confident about thinking of a better solution, 
+  * &#x20;You can either **start coding it** if you are not confident about thinking of a better solution,&#x20;
     * discuss what to **improve your code **and how would it be better with the interviewer, of course, the main idea is about runtime and space, talk about how you improved your big O.
-  * Or you can talk about this simple solution briefly if you already have a clear and better solution in your head, start implementing it. Then get straight to the structure of your better solution. 
+  * Or you can talk about this simple solution briefly if you already have a clear and better solution in your head, start implementing it. Then get straight to the structure of your better solution.&#x20;
 * Always explain what are you doing when coding, too much silence is not very good. Explain why if necessary.
 * Don't scare yourself if you make mistakes, admit it and analyze why it was wrong, talk about how can you improve it! This is always a good quality they would be looking for in an employer: calm, confident, honest, and logical.
 * Try to keep your movement clean, trust me, people like that. Also, smile and be friendly.
@@ -41,15 +41,16 @@ description: >-
 
 ## Useful code snippet:
 
-Integer.MIN_VALUE:-2147483648
+Integer.MIN\_VALUE:-2147483648
 
-Integer.MAX_VALUE:+2147483647
+Integer.MAX\_VALUE:+2147483647
 
 O(nlogk) < O(nlogn), k is constant , and n is infinity case.
 
 How to traverse 4 direction in array of array
 
 ```
+        //Top,right,bottom ,left
         int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
         
         for(int[] d : directions){
@@ -229,11 +230,34 @@ FIFO
  queue.peek();
  queue.poll()// remove and returns head
  queue.size()
+
 ```
+
+### Deque:
+
+```
+    Deque<Integer> de_que
+            = new ArrayDeque<Integer>(10);
+        // Add at the first
+        deque.addFirst("Element 2 (Head)");
+  
+        // Add at the last
+        deque.addLast("Element 3 (Tail)");
+        peek() // head
+        peekLast() // tail
+        removeFirst()// remove first
+        removeLast() // remove last
+        
+
+```
+
+
+
+
 
 ### Map:
 
- _TreeMap_ are **sorted according to their natural order**.
+&#x20;_TreeMap_ are **sorted according to their natural order**.
 
 ```
 Map<String,Integer> map = new HashMap<String,Integer>();
