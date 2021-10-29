@@ -67,16 +67,17 @@ public void traverseInOrderWithoutRecursion() {
         Stack<TreeNode> stack = new Stack<>();
         List < Integer > res = new ArrayList < > ();
         while (!stack.isEmpty() || root != null) {
-            //go to left subtree
+            //go to left subtree   visited Left
             while (root != null) {
                 stack.push(root);
                 root = root.left;
             }
             // check current node
             root = stack.pop();
-            // Visited root value
+            // Visited root value , 
             //res.add(root.val);
-          
+              
+           // visited current value
             root = root.right;
         }
         return res;
