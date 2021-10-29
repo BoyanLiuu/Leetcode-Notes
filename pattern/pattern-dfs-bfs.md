@@ -26,21 +26,24 @@ _Iterative:， This is similar with BFS , just change stack_
 
 
 ```
-public void traversePreOrderWithoutRecursion() {
-    Stack<Node> stack = new Stack<Node>();
-    Node current = root;
-    stack.push(root);
-    while(!stack.isEmpty()) {
-        current = stack.pop();
-        visit(current.value);
-        
-        if(current.right != null) {
-            stack.push(current.right);
-        }    
-        if(current.left != null) {
-            stack.push(current.left);
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+         List < Integer > res = new ArrayList <> ();
+         Stack<TreeNode> stack =  new Stack<>();
+        TreeNode curr = root;
+        while(curr != null || stack.size()!=0){
+            
+            while(curr!= null){
+                stack.add(curr);
+                res.add(curr.val);
+                curr = curr.left;
+               
+            }
+             curr = stack.pop();
+            curr = curr.right;    
         }
-    }        
+        return res;
+    }
 }
 ```
 
@@ -111,31 +114,33 @@ _Iterative:_
 __
 
 ```
-public void traversePostOrderWithoutRecursion() {
-    Stack<Node> stack = new Stack<Node>();
-    Node prev = root;
-    Node current = root;
-    stack.push(root);
-
-    while (!stack.isEmpty()) {
-        current = stack.peek();
-        boolean hasChild = (current.left != null || current.right != null);
-        boolean isPrevLastChild = (prev == current.right || 
-          (prev == current.left && current.right == null));
-
-        if (!hasChild || isPrevLastChild) {
-            current = stack.pop();
-            visit(current.value);
-            prev = current;
-        } else {
-            if (current.right != null) {
-                stack.push(current.right);
-            }
-            if (current.left != null) {
-                stack.push(current.left);
-            }
-        }
-    }   
+class Solution {
+    public List<Integer> postorderTraversal(TreeNode root) {
+        Deque<TreeNode> stack=new LinkedList<>();
+        List<Integer> res=new ArrayList<>();
+        if(root==null) return res;
+        TreeNode cur=null;
+        stack.push(root);
+        stack.push(root);
+        
+        while(!stack.isEmpty()){
+            cur=stack.pop();
+            if(!stack.isEmpty()&&stack.peek()==cur){
+                if(cur.right!=null){
+                    stack.push(cur.right);
+                    stack.push(cur.right);
+                }
+                if(cur.left!=null){
+                    stack.push(cur.left);
+                    stack.push(cur.left);
+                }                
+                
+            }else{
+                res.add(cur.val);
+            }         
+        }        
+        return res;
+    }
 }
 ```
 
