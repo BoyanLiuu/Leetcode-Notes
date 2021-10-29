@@ -5,18 +5,18 @@
 ### BFS:
 
 * Any problem involving the traversal of a tree in a level-by-level order can be efficiently solved using this approach. We will use a **Queue** to keep track of all the nodes of a level before we jump onto the next level.
-* This also means that the space complexity of the algorithm will be **O\(W\)**, where ‘W’ is the maximum number of nodes on any level.
+* This also means that the space complexity of the algorithm will be **O(W)**, where ‘W’ is the maximum number of nodes on any level.
 
 ### DFS:
 
-* We will be using recursion \(or we can also use a stack for the iterative approach\) to keep track of all the previous \(parent\) nodes while traversing. This also means that the space complexity of the algorithm will be O\(H\), where ‘H’ is the maximum height of the tree
+* We will be using recursion (or we can also use a stack for the iterative approach) to keep track of all the previous (parent) nodes while traversing. This also means that the space complexity of the algorithm will be O(H), where ‘H’ is the maximum height of the tree
 * There are three different orders for traversing a tree using DFS
-  * **Pre-order Traversal**: root -&gt; left-&gt;right
-  * **In-order Traversal**_: left -&gt; root -&gt; right_
-  * **Post-order Traversal：** left -&gt; right -&gt; root
+  * **Pre-order Traversal**: root -> left->right
+  * **In-order Traversal**_: left -> root -> right_
+  * **Post-order Traversal：** left -> right -> root
 * **Space complexity and Time complexity**:
-  * _**\[ Time Complexity \]**_: we visit each node exactly once, thus the time complexity is O\(N\), where N is the number of nodes.
-  * _**\[ Space Complexity \]**_**:** in the worst case, the tree is completely unbalanced, e.g. each node has only one child node, the recursion call would occur NN times \(the height of the tree\), therefore the storage to keep the call stack would be O\(N\). But in the best case \(the tree is completely balanced\), the height of the tree would be log\(N\). Therefore, the space complexity in this case would be O\(log\(N\)\).
+  * _**\[ Time Complexity ]**_: we visit each node exactly once, thus the time complexity is O(N), where N is the number of nodes.
+  * _**\[ Space Complexity ]**_**:** in the worst case, the tree is completely unbalanced, e.g. each node has only one child node, the recursion call would occur NN times (the height of the tree), therefore the storage to keep the call stack would be O(N). But in the best case (the tree is completely balanced), the height of the tree would be log(N). Therefore, the space complexity in this case would be O(log(N)).
 * 通常是使用 Recursion DFS，    _Remember remove the current node from the path to backtrack,  we need to remove the current node while we are going up the recursive call stack._
 
 #### Preorder Traversal:
@@ -25,7 +25,7 @@ _Iterative:， This is similar with BFS , just change stack_
 
 
 
-```text
+```
 public void traversePreOrderWithoutRecursion() {
     Stack<Node> stack = new Stack<Node>();
     Node current = root;
@@ -46,7 +46,7 @@ public void traversePreOrderWithoutRecursion() {
 
 _Recursive：_
 
-```text
+```
 public void traversePreOrder(Node node) {
     if (node != null) {
         visit(node.value);
@@ -56,38 +56,37 @@ public void traversePreOrder(Node node) {
 }
 ```
 
-\_\_
+__
 
 #### Inorder Traversal:
 
 _Iterative:_
 
-```text
+```
 public void traverseInOrderWithoutRecursion() {
-    Stack<Node> stack = new Stack<Node>();
-    Node current = root;
-    stack.push(root);
-    while(! stack.isEmpty()) {
-        // traverse left
-        while(current.left != null) {
-            current = current.left;                
-            stack.push(current);                
+        Stack<TreeNode> stack = new Stack<>();
+        List < Integer > res = new ArrayList < > ();
+        while (!stack.isEmpty() || root != null) {
+            //go to left subtree
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            // check current node
+            root = stack.pop();
+            // Visited root value
+            //res.add(root.val);
+          
+            root = root.right;
         }
-        //traverse root
-        current = stack.pop();
-        visit(current.value);
-        //traverse right
-        if(current.right != null) {
-            current = current.right;                
-            stack.push(current);
-        }
+        return res;
     }
 }
 ```
 
 _Recursive:_
 
-```text
+```
 public void traverseInOrder(Node node) {
     if (node != null) {
         traverseInOrder(node.left);
@@ -97,7 +96,7 @@ public void traverseInOrder(Node node) {
 }
 ```
 
-\_\_
+__
 
 #### Postorder Traversal:
 
@@ -108,9 +107,9 @@ _Iterative:_
   * Check if we already traversed left and right subtree
   * If not then push right child and left child onto stack
 
-__
+__
 
-```text
+```
 public void traversePostOrderWithoutRecursion() {
     Stack<Node> stack = new Stack<Node>();
     Node prev = root;
@@ -141,7 +140,7 @@ public void traversePostOrderWithoutRecursion() {
 
 _Recursive:_
 
-```text
+```
 public void traversePostOrder(Node node) {
     if (node != null) {
         traversePostOrder(node.left);
@@ -157,7 +156,7 @@ public void traversePostOrder(Node node) {
 
 For example , 113 path sum II
 
- However, note that the problem statement actually asks us to return a list of all the paths that add up to a particular sum. Breadth first search moves one level at a time. That means, we would have to maintain the pathNodes lists for all the paths till a particular level/depth at the same time.
+&#x20;However, note that the problem statement actually asks us to return a list of all the paths that add up to a particular sum. Breadth first search moves one level at a time. That means, we would have to maintain the pathNodes lists for all the paths till a particular level/depth at the same time.
 
 
 
@@ -165,9 +164,9 @@ Say we are at the level 10 in the tree and that level has e.g. 20 nodes. BFS use
 
 
 
-_The good thing about depth first search is that it uses recursion for processing one branch at a time and once we are done processing the nodes of a particular branch, we pop them from the pathNodes list thus saving on space._ At a time, this list would only contain all the nodes in a single branch of the tree and nothing more. Had the problem statement asked us the total number of paths that add up to a particular sum \(root to leaf\), then breadth first search would be an equally viable approach.
+_The good thing about depth first search is that it uses recursion for processing one branch at a time and once we are done processing the nodes of a particular branch, we pop them from the pathNodes list thus saving on space._ At a time, this list would only contain all the nodes in a single branch of the tree and nothing more. Had the problem statement asked us the total number of paths that add up to a particular sum (root to leaf), then breadth first search would be an equally viable approach.
 
-\_\_
+__
 
 
 
@@ -177,7 +176,7 @@ _The good thing about depth first search is that it uses recursion for processin
 
 ### BFS: None
 
-### DFS: 
+### DFS:&#x20;
 
 #### [112. Path Sum](https://leetcode.com/problems/path-sum/)
 
@@ -185,21 +184,21 @@ _The good thing about depth first search is that it uses recursion for processin
 
 #### [104: Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 
-#### 
+####
 
-#### 
-
-
-
-#### 
+####
 
 
+
+####
 
 
 
 
 
-#### 
+
+
+####
 
 
 
@@ -209,7 +208,7 @@ _The good thing about depth first search is that it uses recursion for processin
 
 #### [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
-```text
+```
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> levels = new ArrayList<List<Integer>>();
         if (root == null) return levels;
@@ -235,28 +234,28 @@ _The good thing about depth first search is that it uses recursion for processin
     }
 ```
 
-* Time complexity: O\(N\),where ‘N’ is the total number of nodes in the tree. This is due to the fact that we traverse each node once.
+* Time complexity: O(N),where ‘N’ is the total number of nodes in the tree. This is due to the fact that we traverse each node once.
 * **完全类似的题目**
   * [637. Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/)
-  * \*\*\*\*[107. Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
+  * ****[107. Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
   * [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
-  * \*\*\*\*[111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
+  * ****[111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
     * very similar idea, Since we are using bfs, so the first time we meet a leaf, we could just return that level. So we using additional queue to keep track of levels
   * Level Order Successor:
     * Question: Given a binary tree and a node, find the level order successor of the given node in the tree. The level order successor is the node that appears right after the given node in the level order traversal.
   * [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)
-  * \*\*\*\*[117. Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
+  * ****[117. Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
     * 116的答案可以解答117。。
   * Connect Level Order Siblings
-  * \_\_[_199 Binary Tree Right Side View_](https://leetcode.com/problems/binary-tree-right-side-view/)\_\_
+  * __[_199 Binary Tree Right Side View_](https://leetcode.com/problems/binary-tree-right-side-view/)__
 * 还有一种题型不知道算不算 bfs 或者是额外的题型
   * 200 Number of Island:
   * 994:Rotting Oranges:
   * Tree Boundary:
 
-#### 
+####
 
-#### 
+####
 
 
 
@@ -266,7 +265,7 @@ _The good thing about depth first search is that it uses recursion for processin
 
 #### [113. Path Sum II](https://leetcode.com/problems/path-sum-ii/)
 
-```text
+```
 class Solution {
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> allPaths = new ArrayList<>();
@@ -300,22 +299,22 @@ class Solution {
 }
 ```
 
-* _Time Complexity:_ O\(N^2\),where ‘N’ is the total number of nodes in the tree. This is due to the fact that we traverse each node once \(which will take O\(N\)\), and for every leaf node, we might have to store its path \(by making a copy of the current path\) which will take O\(N\). The tighter time complexity is O\(NLOGN\). From a balanced binary tree, The depth is O\(log N\) so 
-* _Space Complexity:If we ignore the space required for the allPaths list, the space complexity of the above algorithm will be O\(N\) in the worst case. This space will be used to store the recursion stack. The worst-case will happen when the given tree is a linked list \(i.e., every node has only one child\). If we do not ignore allPaths list, The space complexity is O\(NlogN\)_
+* _Time Complexity:_ O(N^2),where ‘N’ is the total number of nodes in the tree. This is due to the fact that we traverse each node once (which will take O(N)), and for every leaf node, we might have to store its path (by making a copy of the current path) which will take O(N). The tighter time complexity is O(NLOGN). From a balanced binary tree, The depth is O(log N) so&#x20;
+* _Space Complexity:If we ignore the space required for the allPaths list, the space complexity of the above algorithm will be O(N) in the worst case. This space will be used to store the recursion stack. The worst-case will happen when the given tree is a linked list (i.e., every node has only one child). If we do not ignore allPaths list, The space complexity is O(NlogN)_
 
-\_\_
+__
 
 #### [129. Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)
 
-**Question:** Given a binary tree where each node can only have a digit \(0-9\) value, each root-to-leaf path will represent a number. Find the total sum of all the numbers represented by all paths.
+**Question:** Given a binary tree where each node can only have a digit (0-9) value, each root-to-leaf path will represent a number. Find the total sum of all the numbers represented by all paths.
 
-![](../.gitbook/assets/image%20%2827%29.png)
+![](<../.gitbook/assets/image (27).png>)
 
-**Answer:** 
+**Answer: **
 
-Time complexity: O\(N\), Space Complexity: O\(N\)
+Time complexity: O(N), Space Complexity: O(N)
 
-```text
+```
   public static int findSumOfPathNumbers(TreeNode root) {
     return findRootToLeafPathNumbers(root, 0);
   }
@@ -340,13 +339,13 @@ Time complexity: O\(N\), Space Complexity: O\(N\)
 
 #### Path With Given Sequence
 
-**Question:** Given a binary tree and a number sequence, find if the sequence is present as a root-to-leaf path in the given tree. ![](../.gitbook/assets/image%20%2826%29.png) 
+**Question:** Given a binary tree and a number sequence, find if the sequence is present as a root-to-leaf path in the given tree. ![](<../.gitbook/assets/image (26).png>)&#x20;
 
-#### 
+####
 
-#### [437. Path Sum III](https://leetcode.com/problems/path-sum-iii/)  
+#### [437. Path Sum III](https://leetcode.com/problems/path-sum-iii/) &#x20;
 
-* There will be four differences than the  112 
+* There will be four differences than the  112&#x20;
   * We will keep track of the current path in a list which will be passed to every recursive call.
   * Whenever we traverse a node we will do two things:
     * Add the current node to the current path.
@@ -354,7 +353,7 @@ Time complexity: O\(N\), Space Complexity: O\(N\)
   * We will traverse all paths and will not stop processing after finding the first path.
   * Remove the current node from the current path before returning from the function. This is needed to Backtrack while we are going up the recursive call stack to process other paths.
 
-```text
+```
 
 class Solution {
     public int pathSum(TreeNode root, int sum) {
@@ -399,7 +398,7 @@ class Solution {
 * The height of the current node will be equal to the maximum of the heights of its left or right children, plus ‘1’ for the current node.
 * The tree diameter at the current node will be equal to the height of the left child plus the height of the right child plus ‘1’ for the current node: diameter = leftTreeHeight + rightTreeHeight . To find the overall tree diameter, we will use a class level variable. This variable will store the maximum diameter of all the nodes visited so far, hence, eventually, it will have the final tree diameter.
 
-#### 
+####
 
 
 
@@ -421,9 +420,8 @@ class Solution {
 
 ## Problem I struggle with:
 
-* 199 
+* 199&#x20;
 * 112
 * 437
 * 543
 * 124
-
