@@ -2,18 +2,20 @@
 
 ## Summary:
 
+* 奇数的第一个bit 一定是 1， x / 2 is x >> 1 and x % 2 is x & 1，&#x20;
+* 当前数字的bit和 除以2的数字bit 只是再 least significant 差一位， 所以我们 得到除以2的数字bit 为1的个数 ，如果是 偶数就不加1 是奇数就加1.  55 是 110111  27 是 11011，
 * _**Use Bit manipulation to avoid Integer overflow**_
 * How to move bit:
-  * &lt;&lt;   double it \(\*2\),  &gt;&gt; divide it \(/2\)
+  * <<   double it (\*2),  >> divide it (/2)
 
-```text
+```
 int rightmostSetBit =1;
 rightmostSetBit = rightmostSetBit << 1;
 ```
 
 * How to get all the bit for an base -10 integer
 
-```text
+```
         int temp =1;
         while( N  > 0){
             System.out.println(N & temp);
@@ -23,19 +25,18 @@ rightmostSetBit = rightmostSetBit << 1;
 
 * How to convert base-10 number into bits string
   * `Integer.toBinaryString`
-* XOR: 
+*   XOR:&#x20;
 
-  * It is true if one and only one input bit is true
+    * It is true if one and only one input bit is true
 
-  ![](../.gitbook/assets/image%20%2833%29.png) 
+    ![](<../.gitbook/assets/image (33).png>)&#x20;
 
-  * It is Associative &  Commutative ![](../.gitbook/assets/image%20%2832%29.png) 
-
-* OR:    A \| B
-* NOT: flips the input bit   ~ 0 = 1;
-  * a ^\(~a\)    =1
-  * ~0 :  0000   ===&gt; 1111, all ones
-  * 
+    * It is Associative &  Commutative ![](<../.gitbook/assets/image (32).png>)&#x20;
+* OR:    A | B
+* NOT: flips the input bit   \~ 0 = 1;
+  * a ^(\~a)    =1
+  * \~0 :  0000   ===> 1111, all ones
+  *
 
 
 
@@ -49,12 +50,12 @@ rightmostSetBit = rightmostSetBit << 1;
 
 ### [268. Missing Number](https://leetcode.com/problems/missing-number/)
 
-* Space Complexity: O\(1\)
-* Time Complexity: O\(N\)
+* Space Complexity: O(1)
+* Time Complexity: O(N)
 * 类似的题目：
-  * \*\*\*\*[**136. Single Number**](https://leetcode.com/problems/single-number/)\*\*\*\*
+  * ****[**136. Single Number**](https://leetcode.com/problems/single-number/)****
 
-```text
+```
     public int missingNumber(int[] nums) {
         int sum = 0;
         // find sum of all numbers from 0 to n.
@@ -71,20 +72,20 @@ rightmostSetBit = rightmostSetBit << 1;
     }
 ```
 
-### 
+###
 
 ### [1009. Complement of Base 10 Integer](https://leetcode.com/problems/complement-of-base-10-integer/)
 
-* Space Complexity: O\(1\)
-* Time Complexity: O\(N\)
+* Space Complexity: O(1)
+* Time Complexity: O(N)
 * number ^ complement = all\_bits\_set
 * number ^ number ^ complement = number ^ all\_bits\_set
-* 0 ^ complement = number ^ all\_bits\_set  ====&gt; complement = number ^ all\_bits\_set
+* 0 ^ complement = number ^ all\_bits\_set  ====> complement = number ^ all\_bits\_set
 * So How do we get all bit set..
-  * for example, number is 5 which is  0101  , all bits set  is 1111, 
+  * for example, number is 5 which is  0101  , all bits set  is 1111,&#x20;
   * We get 1111 from 2 ^3 -1 which is 7
 
-```text
+```
     public int bitwiseComplement(int N) {
         if(N==0){
             return 1;
@@ -117,12 +118,12 @@ rightmostSetBit = rightmostSetBit << 1;
 
 ### [260. Single Number III](https://leetcode.com/problems/single-number-iii/)
 
-* Space Complexity: O\(1\)
-* Time Complexity: O\(N\)
+* Space Complexity: O(1)
+* Time Complexity: O(N)
 * As we know that num1 and num2 are two different numbers, therefore, they should have at least one bit different between them. If a bit in n1xn2 is ‘1’, this means that num1 and num2 have different bits in that place, as we know that we can get ‘1’ only when we do XOR of two different bits, i.e.,
 * We can take any bit which is ‘1’ in n1xn2 and partition all numbers in the given array into two groups based on that bit. One group will have all those numbers with that bit set to ‘0’ and the other with the bit set to ‘1’. This will ensure that num1 will be in one group and num2 will be in the other
 
-```text
+```
     public int[] singleNumber(int[] nums) {
          // get the XOR of the all the numbers
         int n1xn2 = 0;
@@ -150,10 +151,9 @@ rightmostSetBit = rightmostSetBit << 1;
 
 * Problem Challenge
 * Main idea: Flip + invert happens in the same run
-  * Flip: We can flip the image in place by replacing $$ith$$ element from left with the$$ith$$
+  *   Flip: We can flip the image in place by replacing $$ith$$ element from left with the$$ith$$
 
-     element from the right.
-
+      &#x20;element from the right.
   * Invert: We can take XOR of each element with 1. If it is 1 then it will become 0 and if it is 0 then it will become 1.
 
 
@@ -178,10 +178,9 @@ rightmostSetBit = rightmostSetBit << 1;
 
 ## The problem I  struggle with:
 
-* 137. Single Number II
-* 1009. Complement of Base 10 Integer
-* 
-
+* 137\. Single Number II
+* 1009\. Complement of Base 10 Integer
+*
 
 
 
