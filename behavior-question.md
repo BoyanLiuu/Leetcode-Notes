@@ -20,9 +20,46 @@ Result（结果）：最后速度是以前的xx倍，而且我的方案作为bes
 
 ### Low Performer
 
+1. Identify the issue,
+   1. are they slow to complete the project or does he fail to complete the project, does he consist introduce bug ? it is very important to identify which one is the case.
+2. Identify the cost of the low performer
+   1. Whether it is their fault or not their fault?
+   2. For example:&#x20;
+      1. The project is way exceed their level, a junior sde got task from senior .
+      2. it is tech debt, unfair to blame engineer&#x20;
+      3. External depenedency fail to deliever,&#x20;
+      4. Rest of team fail to communicate
+      5. Not ask for help when they should
+      6. They are just not good&#x20;
+   3. You can not determine if he is the low performer based on pr request.
+   4. **What we should do?**
+      1. It looks like you take a bit of time on the project. is there anything holds you down?
+      2. Offer your help, make urself available to them,
+      3. If it is no improvement proceed, then  you need to bring issue to your manager.
+
 ### Team Confilct
 
-### Interest In Company
+As a matter of fact, there was one in my team. My team have been working on a huge feature , and about to lauch in two weeks away.We finished the feature and ready to ship it. But on thursday afternoon,  an engineer add a lot of stylistic change, no logic change, just refractor a poorly written, a heavy tech debt. one send and one review have a tense confliction.
+
+
+
+how i handle any conflict in the work:
+
+1. I always assume good intent on both party. When someone firm disagree with someone else. They have good intent, they generally think their way is right way for the team for themselevs. The person you have conflict with. it is not here to screw you. They disagree with you is becauase they want the best for the team.
+2. always try to common ground,  there is some sort of common ground. they want same thing but they have different way to complete it. I grab two enginner in the room, and have a talk with them. Lets assum we have good intent for each other, lets figure out  what was the actual intent.of both your action. The intent who make the pull request is just improve code base , to make it cleaner.The other person's intent is to minize the risk to introduce the bug right before code base. Both them have good intent, and they suddently saw that. They also found common ground. They both care about improving code base. They both agree that one person change is improtant. Both agree do not want the launch ruined by one bug. In the end, they are agree to push the code later after code freeze.
+3. The lesson I learn:
+   1. always assume good intent, and find common ground
+   2. Better communication help!
+
+### Why do you want to work here?
+
+Three main reason:
+
+* Technical point view. Company have a lot of technical that really excited me. Such as xxxx.How the engineer at Company use xxx in scale production level code.
+* Put aside technical stuffs for a bit. i am also really interested in xx company culture. move fast. One thing that fraustrated me is the slowness enginner project i work on. From few peer who work at facebook. The philosophy lauch product is dramatic different. I am really excited about that in facebook.
+* Facebook bootcamp.  I read a lot of bootcamp experience. I am really excited to try Work on multiple team before commit one. i have not heard any other company doing that. This is really appealing to me.
+
+
 
 ### Strong Disagreement
 
