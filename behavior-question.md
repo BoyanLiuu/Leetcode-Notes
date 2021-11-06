@@ -63,7 +63,53 @@ Three main reason:
 
 ### Strong Disagreement
 
-### Sudden Onboarding
+There are many times I disagree with coworkers. I do think that is less meaningful for me to focus on particular disagreement as much as I focus on a general process I follow when I have a disagreement.
+
+The process I follow in three steps, some of them are inspired from Amazon leadership if you are faimilar with.
+
+1. Dig deep, really try to understand all the people who invovle in the disagreement 's idea. There arguments and their stances. You have to understand why they are disagree with and why they came the conclusion. They have to understand why and how you came your my conclusion
+   * For example, Someone want to change a piece of code and you dont want to change. You have to understand why they change, why is it gonna be better?  Is it be stylistic better, or more performant, or personal preference, or more consist on current code base?
+   * Once you figure reasons, you need to dig deeper to find out why we want this. In some cases, people may think performance might not be matter in this particular cases.
+   * One important notes is attack people idea, not people. Attacking people is mean and create unhealth relationship
+     * You need to make sure you do not attack others and others do not attack you.
+2. Take a step back. See thing in a higher level. Often time, the environment you are in that might influence engineer decision. If you do not look the idea in big picture, you would probably think one person is clearly right. In the enginner view, it would take far too much time, it would worse other part of code base and so on. But if you take the step back, our business is depend on doing this feature then we suddenly we know there is necessary to do this feature.**The team might have priority over engineer level opnion**
+3. Despite all the things we do, people still have a big disagreement. In that case, you have two option. One is go with majority vote, or escalate the decision to decision maker such as manager. If you do escalate the decision, You need to make sure they know all the context information.
+4. Once decision is made, you have to commit to this decision. You cant hold your grudges. If it does not go your way, you have be able to accept that. You have to move forware as it is your decision to make sure product , team and everything go smoothly
+5. Yeah this is how i handle strong disagreement and how i plan to continue handling disagreements at work.
+
+### Sudden Onboarding:
+
+Imagine you and your team are in the middle of a major project at work, with many moving parts, complicated context, a lot of work, etc.. A new software engineer joins your team, and you're tasked with onboarding them; what do you do?
+
+I want to emphasize how important to properly onboard the new engineer. Because if you improperly onboard a new engineer, not only you are give them bad first impression to your team and company, which in ture will give them a bad first experience and cause them unhappy. But also you will be causing a lot of other negative effects to trickle later on on them as a person. They might not able to perform properly and they might just perform poorly. You also have negative impact on you team. Because suddenly you will have to take more work.You have to do the work they supposed to do. This will eventually negatively affect your company.&#x20;
+
+Hopefully you have done some preplanning, you have been preparing for this new engineer
+
+Three things:&#x20;
+
+1. The proper document , this one takes pre-planning. Having a proper documentation for the onboarding aspects of their job like getting new devlopment set up as part of team, knowing where they need to go to access inforation. All these things can be very easily captured in the documentation, It can save you tons of time. There is nothing more frustrating than being a new engineer trying to get your development setup and getting a bunch of errors that nobody knows about, nobody documented anywhere.It just a really bad experience.
+2. It is very important to make myself available for any questions they might have, for anything they might need to unblock them. Especially when they are joining a team, like you are in the first few days, first couple of weeks. They are naturally gonna have a lot of questions, you will be able to solve that and help them out. You do not want them to waste half of day or full day to do  something you can fix them in 10 seconds.Overwhelming available is better than underwhelming available
+3. You have to very carefully pick a project to work on. Once they set up everything, Let them start them out with one or two very very simple bugs. If you working on frontend, they can have jobs like change color in a button or change some text. Something to make them familiar with code base and overrall development process. Then give them a starter project. It may takes one or two weeks. They are not affecting or not depending on anybody else. But it should ideally that would have a decent amount of affect. In frontend aspect, something that customer has request but that is not super important. Then give them a first big project, You do not want this would be a task to block others task. Something is out of critical path and proper to their level.
+
+### Production Outrage:
+
+Describe a time when you had to deal with an outage at work. How did you handle the situation? What steps did you take after the issue was resolved?
+
+I experienced handful production outrage. The one that I want to talk about here. is actually the very first production outrage. I was last engineer in my team. The product primary pages was just blank. It wasnt loading. Nothing show up. So obviously, for a second, I kind of panicked,Then I compose myself. and here is how i handle this.
+
+1. The first thing is I want to confirm that this was actually a real bug in production , not some bug  on my computer, or my account, or something like that. So I ask a couple people around , These were not  my teammates,  to go on the link of the page and see if they also experience same thing on their computers, on their accounts. And yes they were.
+2. Before alerting anyone else,I was gonna spend 5 to 10 minutes to see if i could debug the issue. I wanted to see can i fix it withoput alert my teammate,  It turns out I wasn't able to figure out what the cause of the issue was. It was a very weird bug, blank page, nothing in the chrome console.At that point, I did alert the rest of my team after around 10 minutes. Here is my philosophy to deal with this issue. You never wanna play the hero, if you can try to figure the issue within five minutes, but after a certain point, there is no point for hiding it from other people. The key thing is to fix the issue.
+3. One of my team still have chance to fix the problem.One of key thing here that we did  which is something that i am very big proponent of  is Even though the situation is stressful, our landing page is down, so whole product is unusuable. You have to calm you have to not put figure or blame to anybody.Obviously, It is very easy to potentially point fingers and blame people when you say something like this file is poorly written. We do not want to do that. This is unhealthy in a team in general. So we pair program we document everything we do and keep our team in the loop.,At that point our manager was also in the loop. We follow the process that we knew to follow
+
+
+
+
+
+
+
+
+
+
 
 ### Work Distribution
 
