@@ -40,6 +40,12 @@ public BinaryTree findSuccessor(BinaryTree tree, BinaryTree node) {
 		}
 ```
 
+### **Tree height:**
+
+&#x20;In the average case of balanced tree, the tree height H=logN, in the worst case of skewed tree,H=N.
+
+
+
 ## Medium
 
 * [572. Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
