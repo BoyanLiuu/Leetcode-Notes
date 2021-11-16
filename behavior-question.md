@@ -16,12 +16,6 @@ Action（行动）：我分析了一下产品需求/问题症结，研究了一�
 
 Result（结果）：最后速度是以前的xx倍，而且我的方案作为best practice被大家认可，推广
 
-
-
-
-
-
-
 ## Questions
 
 ### Low Performer
@@ -120,77 +114,19 @@ I experienced handful production outrage. The one that I want to talk about here
 
 ### Work Distribution
 
-The first I would do is to scope out the work. It is very important for you to understand what it is exactly that you are building and have a clear picture of the various logical chunks that can be divided into various logical chunks, and then engineers on your team can then take ownership of. So you wanna divide the work into these sensible chunks. You dont want to be too vague. for example, the chunk of work is that we have to build an API and then you probably do not want to go too deep or too granular.&#x20;
-
-Once you have done that , you have to be able to balance a few things at the same time,&#x20;
-
-First of all, the work that is highly critical and that is very difficult has to be prioritized and often time that has to be assigned to thje most capable person.&#x20;
-
-Another thing you need to balance is people's happinese. Some people might have preference. You have to use your jundgment  to see if that would make sense.&#x20;
-
-And also the job is best for engineer's career path. for example, if you got one engineer on the team who really needs to focus on proving their ability to build out technically complex features then ideally you can assign to them complex feature
-
-For example, part of project that do not need  much context about the code base can assign to new engineers, parts of the that are very critical assign to senior developer
-
-
-
 ### Past Mistake
-
-One mistake that stands out to me is a mistake that i made about a year ago. We split up our product into a bunch of microservices, we can deploy microservices to production whenever we want,we can deploy user interface separately from every other service.
-
-I decided for no real reason to deploy our user interface to production. We have a lot of changes accumulated and it turned out we had one change that was kind of masked behind a lot of code changes. This change  wasnt compatible with current state of the backend that was currently in production. As soon as the deployment went through, I realized I had broken production at about 2:00. I was in a pretty bad situation, at  that time we did not have an easy way to revert  deployment. I did not have a clear button on the user interface that we were using to revert a production. I could not fix the issue in the backend code, i do not have backend skills to do that. So basically i had deploy a bug to production at 2:00 AM. So I have to wake up my cofounder to fix the issue.
-
-There was clearly a mistake. Because we clearly did not want to have this bug in production overnighht.  I have to wake up cofounder at 2:00AM which is obviously not a pleasant experience.
-
-Now as any other mistakes I made in my life, I always treat them as learning opportunities, it was actually the good one. It not only tell us a few thing not to do, but it also exposed a few sort of problems or issues we had in our general system.
-
-The first lesson I learn is not push to production unless it is absolutely necessary at two in the morning, when not many people are wake.
-
-The second lesson, do not have broken code in the main branch, avoid that situation, only load working code into main branch
-
-We also realise there is a problem in our system we should be able to revert the system easily, so in the next couple day we implement a simple button on our custom in house built deployment system. In  the future we can easily revert code
 
 ### Challenging Project
 
 My XXX project is a React web application. It's the second project on my resume. I implemented a Material UI version of cnodejs.org website, which is the biggest Node.js Chinese community. I applied ReactJS for the Frontend development, which is the most popular Frontend framework. I used Node.js and Express for Backend services development. The difficult/interesting part is that when I wanted to deploy the website on AWS, I found that the generated website JS file was very big up to 900 kilobytes. But I had optimized the generated file according to React official document. To conquer it, I read a lot of source code on GitHub and talk with my friends in the industry and tried for many times（这里透露了三个点：自主学习能力，向合适的的人寻求帮助还有实验精神）. Finally I found the problem which is that I used a third-party react component called "react-simplemde-editor" and its code quality was not good enough. The author of this component used React as the production dependency instead of the development dependency which leads to the big generated JS file. Then I solved the problem by rewriting the component by myself. After this optimization, the generated JS file was reduced by 200 kilobytes. When I seen the website used by thousands of web developers, I was very proud of it.
 
-
-
-另外一个 answer：
-
-One that come to mind here is a particularly challenging project, the project is large and we have very little time.
-
-
-
-###
+### Production Outrage
 
 ### Tough Feedback
 
-I am a confirmed believer in giving constructive feedback by a way of radical transparency.
-
-When giving feedback, you want to be very prompt and direct in giving your feedback or receiving feedback. There is no better to improve as SDE by receiving quality constructive feedback.
-
-Another thing i want to add or receive feedback, it to give or ask for actionable steps to improve. In other words, it does not really help to tell the person who is receiving feedback if you just tell them they are doing something wrong without telling them how they can improve and what they can do.
-
-For example, At the start of my career at fraunhofer, One of a peer follow a poll request that I had sent out with code, basically he came up and told me this might sound harsh, I think you writting certain frontend component wrong way. In a sub-optimal way,. I had a good conversation with him, He told me why were these frontend components are sub-optimal and what is right way to do?&#x20;
-
-For the time that i gave feedback to someone, One thing that he would do that wasnt particular good, he would often start talking, starting asking question starting  giving ideas, It kind feel like he did not prepare for his thought. He would start rambling on a particular noticable time. Then I told him after I saw this 3 times, I told him in our one on one meeting, hey there is something where I think you could improve on, as far as actionable steps, I told him  , just try to prepare yourself, and gather your thought a little bit more time. In the next one on one, he told me he really appreciated the feedback.
-
 ### Strengths and Improvement
 
-I am very well versed in everything related to the frontend. I am very well versed in morden frontend framework like react-redux. all the typical frontend stuff. I am also think I am also good at non-technical area such as taking initiative, I am pretty good to do things without being told to do them. So if i's a refactor that nobody is really been doing. I would do it. Setting u meetings to disambiguate confusion on a feature or a project. I am very good at diving deep and asking question and making sure that people are on the same page. Also make sure every stakeholder on the project is on the same page.\\
-
-
-
-One thing that I can improve is getting a better understanding on how backend decisions are made. How backend trade of is thought off. Especially if they are related to database operations. I made this kind of mistake in the past.  Oh this should be a simple backend fix. The backend should be support this easily or we will be able to do this feature. And it turn out it is not quite that simple.
-
-How do I improve on: doing fullstack work, attending api design meeting, reading some backend design doc.
-
-## Comfort Zone
-
-The best way to grow is to push yourself out of comfort zone. To challenge yourself with new things. It is great way to test , to see if you like certain things.
-
-
+### Comfort Zone
 
 ### **What do you know about us**
 

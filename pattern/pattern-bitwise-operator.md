@@ -36,7 +36,19 @@ rightmostSetBit = rightmostSetBit << 1;
 * NOT: flips the input bit   \~ 0 = 1;
   * a ^(\~a)    =1
   * \~0 :  0000   ===> 1111, all ones
-  *
+* 计算数字里you多少个1
+
+```
+// Calculate the hamming weight for each Integer
+    private int hammingWt(int num) {
+        int wt = 0;
+        while (num > 0) {
+            wt++;
+            num = num & (num - 1);
+        }
+        return wt;
+    }
+```
 
 
 
