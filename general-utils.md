@@ -193,6 +193,11 @@ for(int i = 0; i < s.length(); i ++)
     
 // convert from arraylist to array
 result.toArray(new int[result.size()][]);
+
+
+// convert map values to arraylist
+new ArrayList(ans.values());
+
 ```
 
 ### Linkedlist:
